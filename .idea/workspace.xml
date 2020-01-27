@@ -7,9 +7,14 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1WzCj90R4wlqALrmddhh7yWmPv7" />
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$USER_HOME$/IdeaProjects/RabbitSimulator" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -39,5 +44,11 @@
       <updated>1580143168913</updated>
     </task>
     <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="518" y="188" key="FileChooserDialogImpl" timestamp="1580145581578">
+      <screen x="0" y="0" width="1474" height="864" />
+    </state>
+    <state x="518" y="188" key="FileChooserDialogImpl/0.0.1474.864@0.0.1474.864" timestamp="1580145581578" />
   </component>
 </project>
