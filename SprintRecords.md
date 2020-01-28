@@ -81,7 +81,17 @@ Goals:
 
 Sprint: 
 
-* 
+* getPregnant() and giveBirth methods were added to Rabbit class so that they can change states (tests all passed).
+
+* Jack and Conor discussed the logic of the CreateOffspring logic 
+
+* we won't multiple threads for time implemetation, we will use a timer class  
+
+* James and Thanu mostly finished the time implementation, finish up in sprint
+
+Review: 
+
+* need to start thinking about effciency and refactoring 
 
 
 
