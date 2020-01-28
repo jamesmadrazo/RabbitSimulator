@@ -23,7 +23,7 @@
 
 Goals: 
 
-* use git -(everyone)
+* use git -(everyone, but mainly Jack and Conor)
 
 * add main/field/world class - (Tyler, Emese)
 
