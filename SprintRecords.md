@@ -23,12 +23,12 @@
 
 Goals: 
 
-* use git (blocker) -(Jack and James)
+* use git (blocker) -(everyone)
 
-* add main/field/world class 
+* add main/field/world class - (Tyler, Emese)
 
 * Run tests on what we have done so far (rabbit class) and see if it works
 
-* merge the rabbit counter classes
+* merge the rabbit counter classes - due to blockers with git, moved this to next sprint
 
 
