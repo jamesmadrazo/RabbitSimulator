@@ -91,7 +91,6 @@ public class Rabbit {
             setAvailable(true);
         }
         return arrayOfRabbits;
-        //return array of 1-14 new rabbits
     }
 
 

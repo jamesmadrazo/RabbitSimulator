@@ -1,17 +1,14 @@
 package com.sparta.engineering50;
 
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 public class FieldTest {
     @Test
     void testThatRabbitsCanGetPregnant() {
-        Field field = new Field();
         Rabbit maleRabbit = new Rabbit();
         maleRabbit.setGender("male");
         Rabbit femaleRabbit = new Rabbit();
@@ -20,9 +17,9 @@ public class FieldTest {
             maleRabbit.increaseAge();
             femaleRabbit.increaseAge();
         }
-        field.addRabbit(maleRabbit);
-        field.addRabbit(femaleRabbit);
-        field.breed();
+        Field.addRabbit(maleRabbit);
+        Field.addRabbit(femaleRabbit);
+        Field.breed();
         assertEquals("pregnant", femaleRabbit.getState());
     }
 
@@ -35,21 +32,20 @@ public class FieldTest {
         Rabbit femaleRabbit1 = new Rabbit();
         femaleRabbit1.setGender("female");
 
-        Field field = new Field();
         for (int i = 0; i <= 3; i++) {
             maleRabbit.increaseAge();
             femaleRabbit.increaseAge();
             femaleRabbit1.increaseAge();
         }
-        field.addRabbit(maleRabbit);
-        field.addRabbit(femaleRabbit);
-        field.addRabbit(femaleRabbit1);
-        System.out.println(field.getRabbits().size());
-        field.breed();
+        Field.addRabbit(maleRabbit);
+        Field.addRabbit(femaleRabbit);
+        Field.addRabbit(femaleRabbit1);
+        System.out.println(Field.getRabbits().size());
+        Field.breed();
 
-        assertFalse(maleRabbit.getState().equals("pregnant"));
-        assertTrue(femaleRabbit.getState().equals("pregnant"));
-        assertFalse(femaleRabbit1.getState().equals("pregnant"));
+        assertNotEquals("pregnant", maleRabbit.getState());
+        assertEquals("pregnant", femaleRabbit.getState());
+        assertNotEquals("pregnant", femaleRabbit1.getState());
 
     }
 
@@ -64,24 +60,23 @@ public class FieldTest {
         Rabbit femaleRabbit1 = new Rabbit();
         femaleRabbit1.setGender("female");
 
-        Field field = new Field();
         for (int i = 0; i <= 3; i++) {
             maleRabbit.increaseAge();
             maleRabbit1.increaseAge();
             femaleRabbit.increaseAge();
             femaleRabbit1.increaseAge();
         }
-        field.addRabbit(maleRabbit);
-        field.addRabbit(maleRabbit1);
-        field.addRabbit(femaleRabbit);
-        field.addRabbit(femaleRabbit1);
+        Field.addRabbit(maleRabbit);
+        Field.addRabbit(maleRabbit1);
+        Field.addRabbit(femaleRabbit);
+        Field.addRabbit(femaleRabbit1);
 
-        field.breed();
+        Field.breed();
 
-        assertFalse(maleRabbit.getState().equals("pregnant"));
-        assertFalse(maleRabbit.getState().equals("pregnant"));
-        assertTrue(femaleRabbit.getState().equals("pregnant"));
-        assertTrue(femaleRabbit1.getState().equals("pregnant"));
+        assertNotEquals("pregnant", maleRabbit.getState());
+        assertNotEquals("pregnant", maleRabbit.getState());
+        assertEquals("pregnant", femaleRabbit.getState());
+        assertEquals("pregnant", femaleRabbit1.getState());
 
     }
 
@@ -91,8 +86,7 @@ public class FieldTest {
         rabbit.setGender("female");
         rabbit.getPregnant();
         ArrayList<Rabbit> newRabbits = rabbit.giveBirth();
-        Field field = new Field();
-        field.addRabbits(newRabbits);
-        assertTrue(field.getRabbits().size()>0);
+        Field.addRabbits(newRabbits);
+        assertTrue(Field.getRabbits().size()>0);
     }
 }

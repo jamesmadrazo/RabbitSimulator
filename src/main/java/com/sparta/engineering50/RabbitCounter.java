@@ -35,7 +35,7 @@ public class RabbitCounter {
         deadCounter++;
     }
 
-    public static int getDeadCounter(){
+    public static int getDeadCounter() {
         return deadCounter;
     }
 

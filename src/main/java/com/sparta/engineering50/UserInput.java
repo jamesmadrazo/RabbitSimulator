@@ -8,6 +8,7 @@ public class UserInput {
     public int getUserInput() {
         Scanner scanner = new Scanner(System.in);
         userInput = scanner.nextInt();
-        return  userInput;
-    }}
+        return userInput;
+    }
+}
 

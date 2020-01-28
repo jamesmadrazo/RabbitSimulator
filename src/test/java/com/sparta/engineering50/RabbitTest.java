@@ -27,6 +27,7 @@ public class RabbitTest {
         for (String s : genders) {
             if (s.equals(rabbit.getGender())) {
                 isGender = true;
+                break;
             }
         }
         assertTrue(isGender);
@@ -34,47 +35,47 @@ public class RabbitTest {
 
     @Test
     public void stateShouldChangeToAdultAfterThreeMonths() {
-        Rabbit rabbit1 = new Rabbit();
+        Rabbit rabbit = new Rabbit();
         for (int i = 0; i <= 3; i++) {
-            rabbit1.increaseAge();
+            rabbit.increaseAge();
         }
-        assertEquals("adult", rabbit1.getState());
+        assertEquals("adult", rabbit.getState());
     }
 
     @Test
     public void testIfRabbitDiedAfter60Months() {
-        Rabbit rabbit2 = new Rabbit();
+        Rabbit rabbit = new Rabbit();
         for (int i = 0; i <= 60; i++) {
-            rabbit2.increaseAge();
+            rabbit.increaseAge();
         }
-        assertEquals("dead", rabbit2.getState());
+        assertEquals("dead", rabbit.getState());
     }
 
     //this is not accounting for rabbits being adult yet, as rabbits are not aged yet
     //we will account for only adult getting pregnant in breeding
     @Test
     public void testIfFemaleRabbitGotPregnant() {
-        Rabbit rabbit3 = new Rabbit();
-        rabbit3.setGender("female");
-        rabbit3.getPregnant();
-        assertEquals("pregnant", rabbit3.getState());
+        Rabbit rabbit = new Rabbit();
+        rabbit.setGender("female");
+        rabbit.getPregnant();
+        assertEquals("pregnant", rabbit.getState());
     }
 
     @Test
     public void testIfMaleRabbitGotPregnant() {
-        Rabbit rabbit3 = new Rabbit();
-        rabbit3.setGender("male");
-        rabbit3.getPregnant();
-        assertEquals("young", rabbit3.getState());
+        Rabbit rabbit = new Rabbit();
+        rabbit.setGender("male");
+        rabbit.getPregnant();
+        assertEquals("young", rabbit.getState());
     }
 
     @Test
     public void testIfFemaleRabbitGaveBirthItIsAdultAfterward() {
-        Rabbit rabbit3 = new Rabbit();
-        rabbit3.setGender("female");
-        rabbit3.getPregnant();
-        rabbit3.giveBirth();
-        assertEquals("adult", rabbit3.getState());
+        Rabbit rabbit = new Rabbit();
+        rabbit.setGender("female");
+        rabbit.getPregnant();
+        rabbit.giveBirth();
+        assertEquals("adult", rabbit.getState());
     }
 
     @Test
@@ -85,15 +86,4 @@ public class RabbitTest {
         arrayOfRabbits = rabbit.giveBirth();
         assertTrue(arrayOfRabbits.size() > 0);
     }
-    @Test
-    public void rabbitMaleCounterShouldBeOne() {
-        RabbitCounter.increaseMaleCounter();
-        assertEquals(1, RabbitCounter.getMaleRabbitCounter());
-    }
-    @Test
-    public void rabbitFemaleCounterShouldBeOne() {
-        RabbitCounter.increaseFemaleCounter();
-        assertEquals(1,RabbitCounter.getFemaleRabbitCounter());
-    }
-
 }

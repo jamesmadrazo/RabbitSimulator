@@ -1,29 +1,24 @@
 package com.sparta.engineering50;
 
 import java.util.ArrayList;
-import java.util.Random;
 
 public class Timer {
-  //  private final int rabbitDead = 60;
+    //  private final int rabbitDead = 60;
     //private int months = 0;
 
-     Rabbit rabbit = new Rabbit();
+    Rabbit rabbit = new Rabbit();
 
     public static void ageRabbits(ArrayList<Rabbit> rabbits) {
         for (Rabbit rabbit : rabbits) {
             rabbit.increaseAge();
-            if (rabbit.getState() == "dead"){
+            if (rabbit.getState().equals("dead")) {
                 RabbitCounter.deadCounterIncrease();
-              //  rabbits.remove()
+                //  rabbits.remove()
             }
         }
     }
 }
-
-
-
-
-        /*
+   /*
 
     Rabbit rabbit = new Rabbit();
     Random rand = new Random();
