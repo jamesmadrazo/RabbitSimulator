@@ -13,17 +13,14 @@ public class TimeSimulatorTest {
     @Test
     void checkFieldTickWorks() throws InterruptedException {
         TimeSimulator timeSimulator = new TimeSimulator();
-        Field.addRabbit(new Rabbit());
-        Field.addRabbit(new Rabbit());
-        Field.addRabbit(new Rabbit());
-        Field.addRabbit(new Rabbit());
-        Field.addRabbit(new Rabbit());
-        Field.addRabbit(new Rabbit());
-        Field.addRabbit(new Rabbit());
-        Field.addRabbit(new Rabbit());
-        timeSimulator.initialiseTimeSimulator(2);
-        Thread.sleep(2000);
-        System.out.println(Field.getRabbits().size());
-        assertTrue(Field.getRabbits().size()>8);
+        Rabbit maleRabbit = new Rabbit();
+        maleRabbit.setGender("male");
+        Rabbit femaleRabbit = new Rabbit();
+        femaleRabbit.setGender("female");
+        Field.addRabbit(maleRabbit);
+        Field.addRabbit(femaleRabbit);
+        timeSimulator.initialiseTimeSimulator(120);
+        Thread.currentThread().join();
+        assertTrue(Field.getRabbits().size()>10);
     }
 }
