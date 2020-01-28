@@ -23,9 +23,9 @@
 
 Goals: 
 
-* use git -(everyone, but mainly Jack and Conor)
+* use git - (everyone, but mainly Jack and Conor)
 
-* add main/field/world class - (Tyler, Emese)
+* add Field class for rabbits to be created in - (Tyler, Emese)
 
 * Run tests on what we have done so far (rabbit class) and see if it works
 
@@ -42,3 +42,22 @@ Sprint:
 * Thanu and James reviewed the tests we have so far and added new ones
 
 * merge the rabbit counter classes - due to blockers with git, moved this to next sprint
+
+Sprint review (10:25-10:38): 
+
+* concentrate on creating a working tested code in next sprint
+
+* refactor later
+
+* start next sprint with 10 git best practice 
+
+### 1st sprint (10:53 - 11:53):
+
+Goals:
+
+* discuss git best practice that everyone can follow
+
+* merge the rabbit counter classes
+
+
+
