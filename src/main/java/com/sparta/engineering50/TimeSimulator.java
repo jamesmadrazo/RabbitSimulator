@@ -33,8 +33,9 @@ public class TimeSimulator {
                     }
                     Field.addRabbits(toAdd);
                     Field.breed();
+
                 }
-                System.out.println(1);
+                System.out.println("Seconds: " + count + " Rabbits: " + Field.getRabbits().size());
                 if (count >= seconds) {
                     timer.cancel();
                     timer.purge();
