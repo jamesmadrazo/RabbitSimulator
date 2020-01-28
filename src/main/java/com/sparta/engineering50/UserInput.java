@@ -1,4 +1,4 @@
-package com.sparta.engineering50.java;
+package com.sparta.engineering50;
 
 import java.util.Scanner;
 
