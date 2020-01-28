@@ -95,7 +95,27 @@ Review:
 
 * need to make it more clear what each task includes at the start of the sprint so we don't make conflicting methods
 
+## 4th Sprint (13:46 - 14:46) 
 
+Goals: 
+
+* Implement TimeSimulator.class - (Conor and Jack)
+
+* Implement breeding method - (Emese and Tyler)
+
+* Implement dead rabbit counter - (Thanu and James) 
+
+Sprint: 
+
+* breed() method successfully implemented and tested
+
+* Dead rabbit counter implemented successfully and tested 
+
+* TimeSimulator implemented partially. Not tested due to a bug. Will need to finish in next sprint 
+
+Review: 
+
+* Team happy with how spring went and was able to get a lot done within the hour. 
 
 
 
