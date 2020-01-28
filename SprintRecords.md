@@ -51,7 +51,7 @@ Sprint review (10:25-10:38):
 
 * start next sprint with 10 git best practice 
 
-### 1st sprint (10:53 - 11:53):
+### 2nd sprint (10:53 - 11:53):
 
 Goals:
 
