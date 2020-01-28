@@ -23,8 +23,10 @@
 
 Goals: 
 
-* use git
+* use git (blocker)
 
 * Run tests on what we have done so far (rabbit class) and see if it works
 
 * add main/field/world class
+
+* merge the rabbit counter classes
