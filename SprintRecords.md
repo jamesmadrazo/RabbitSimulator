@@ -73,9 +73,9 @@ Sprint:
 
 Goals: 
 
-* Time Implementation - (James and Thanu)
+* Time Dependent methods Implementation - (James and Thanu)
 
-* Threads: on simulating time and one handling rabbits - (Jack and Conor) - decide if we actually need this
+* Threads: on simulating time flow and one handling rabbits - (Jack and Conor) - decide if we actually need this
 
 * Rabbit states: age the rabbits method - (Tyler and Emese) 
 
@@ -87,11 +87,13 @@ Sprint:
 
 * we won't multiple threads for time implemetation, we will use a timer class  
 
-* James and Thanu mostly finished the time implementation, finish up in sprint
+* James and Thanu mostly finished the time dependent methods implementation, finish up in sprint
 
 Review: 
 
 * need to start thinking about effciency and refactoring 
+
+* need to make it more clear what each task includes at the start of the sprint so we don't make conflicting methods
 
 
 
