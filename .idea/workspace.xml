@@ -3,11 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a89c3c8e-cd6d-4516-a1c0-8314372abf3f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sparta/engineering50/Rabbit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sparta/engineering50/Rabbit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sparta/engineering50/RabbitCounterFemale.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sparta/engineering50/RabbitCounterFemale.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sparta/engineering50/RabbitCounterMale.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sparta/engineering50/RabbitCounterMale.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sparta/engineering50/UserInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sparta/engineering50/UserInput.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/sparta/engineering50/RabbitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/sparta/engineering50/RabbitTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +46,22 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.FieldTest">
+    <configuration name="FieldTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RabbitSimulator2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.sparta.engineering50.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.sparta.engineering50" />
+      <option name="MAIN_CLASS_NAME" value="com.sparta.engineering50.FieldTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="RabbitTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="RabbitSimulator2" />
       <extension name="coverage">
@@ -69,6 +79,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.FieldTest" />
         <item itemvalue="JUnit.RabbitTest" />
       </list>
     </recent_temporary>
@@ -103,41 +114,53 @@
       <option name="project" value="LOCAL" />
       <updated>1580205351021</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="ran tests and work; changed package reference to remove .java">
+      <created>1580205756098</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1580205756098</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="moved RabbitTest" />
-    <option name="LAST_COMMIT_MESSAGE" value="moved RabbitTest" />
+    <MESSAGE value="ran tests and work; changed package reference to remove .java" />
+    <option name="LAST_COMMIT_MESSAGE" value="ran tests and work; changed package reference to remove .java" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="361" y="0" key="CommitChangelistDialog2" timestamp="1580205350021">
+    <state x="162" y="274" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1580206671584">
       <screen x="0" y="0" width="1474" height="864" />
     </state>
-    <state x="361" y="0" key="CommitChangelistDialog2/0.0.1474.864@0.0.1474.864" timestamp="1580205350021" />
+    <state x="162" y="274" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1474.864@0.0.1474.864" timestamp="1580206671584" />
+    <state x="361" y="0" key="CommitChangelistDialog2" timestamp="1580205755219">
+      <screen x="0" y="0" width="1474" height="864" />
+    </state>
+    <state x="361" y="0" key="CommitChangelistDialog2/0.0.1474.864@0.0.1474.864" timestamp="1580205755219" />
     <state x="518" y="188" key="FileChooserDialogImpl" timestamp="1580145581578">
       <screen x="0" y="0" width="1474" height="864" />
     </state>
     <state x="518" y="188" key="FileChooserDialogImpl/0.0.1474.864@0.0.1474.864" timestamp="1580145581578" />
-    <state width="1431" height="203" key="GridCell.Tab.0.bottom" timestamp="1580205719616">
+    <state width="1431" height="203" key="GridCell.Tab.0.bottom" timestamp="1580206738147">
       <screen x="0" y="0" width="1474" height="864" />
     </state>
-    <state width="1431" height="203" key="GridCell.Tab.0.bottom/0.0.1474.864@0.0.1474.864" timestamp="1580205719616" />
-    <state width="1431" height="203" key="GridCell.Tab.0.center" timestamp="1580205719615">
+    <state width="1431" height="203" key="GridCell.Tab.0.bottom/0.0.1474.864@0.0.1474.864" timestamp="1580206738147" />
+    <state width="1431" height="203" key="GridCell.Tab.0.center" timestamp="1580206738147">
       <screen x="0" y="0" width="1474" height="864" />
     </state>
-    <state width="1431" height="203" key="GridCell.Tab.0.center/0.0.1474.864@0.0.1474.864" timestamp="1580205719615" />
-    <state width="1431" height="203" key="GridCell.Tab.0.left" timestamp="1580205719615">
+    <state width="1431" height="203" key="GridCell.Tab.0.center/0.0.1474.864@0.0.1474.864" timestamp="1580206738147" />
+    <state width="1431" height="203" key="GridCell.Tab.0.left" timestamp="1580206738146">
       <screen x="0" y="0" width="1474" height="864" />
     </state>
-    <state width="1431" height="203" key="GridCell.Tab.0.left/0.0.1474.864@0.0.1474.864" timestamp="1580205719615" />
-    <state width="1431" height="203" key="GridCell.Tab.0.right" timestamp="1580205719616">
+    <state width="1431" height="203" key="GridCell.Tab.0.left/0.0.1474.864@0.0.1474.864" timestamp="1580206738146" />
+    <state width="1431" height="203" key="GridCell.Tab.0.right" timestamp="1580206738147">
       <screen x="0" y="0" width="1474" height="864" />
     </state>
-    <state width="1431" height="203" key="GridCell.Tab.0.right/0.0.1474.864@0.0.1474.864" timestamp="1580205719615" />
-    <state x="330" y="162" key="Vcs.Push.Dialog.v2" timestamp="1580205364056">
+    <state width="1431" height="203" key="GridCell.Tab.0.right/0.0.1474.864@0.0.1474.864" timestamp="1580206738147" />
+    <state x="330" y="162" key="Vcs.Push.Dialog.v2" timestamp="1580205803573">
       <screen x="0" y="0" width="1474" height="864" />
     </state>
-    <state x="330" y="162" key="Vcs.Push.Dialog.v2/0.0.1474.864@0.0.1474.864" timestamp="1580205364056" />
+    <state x="330" y="162" key="Vcs.Push.Dialog.v2/0.0.1474.864@0.0.1474.864" timestamp="1580205803573" />
   </component>
 </project>
