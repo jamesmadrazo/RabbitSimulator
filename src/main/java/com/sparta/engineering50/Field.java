@@ -9,25 +9,20 @@ public class Field {
         return rabbits;
     }
 
-    //method for testing
     public static void addRabbit(Rabbit rabbit) {
         rabbits.add(rabbit);
     }
 
     public static void addRabbits(ArrayList<Rabbit> rabbitArray) {
-        for(Rabbit rabbit:rabbitArray) {
+        for (Rabbit rabbit : rabbitArray) {
             addRabbit(rabbit);
         }
-    }
-
-    public void createRabbit() {
-        rabbits.add(new Rabbit());
     }
 
     public static void breed() {
         int rabbitCounter = 0;
         while (rabbitCounter <= rabbits.size())
-            for (Rabbit rabbit:rabbits) {
+            for (Rabbit rabbit : rabbits) {
                 rabbitCounter++;
                 if (rabbit.isAvailable() && rabbit.getGender().equals("male")) {
                     for (Rabbit rabbit1 : rabbits) {
@@ -40,5 +35,5 @@ public class Field {
                     }
                 }
             }
-        }
     }
+}

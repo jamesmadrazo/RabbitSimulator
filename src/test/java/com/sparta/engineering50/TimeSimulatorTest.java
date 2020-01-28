@@ -1,7 +1,9 @@
 package com.sparta.engineering50;
+
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+
 public class TimeSimulatorTest {
     @Test
     void checkTimerRuns() throws InterruptedException {
@@ -10,7 +12,7 @@ public class TimeSimulatorTest {
         Thread.sleep(6000);
         assertEquals(6, timeSim.getCount());
     }
-    @Test
+    @Test // 29 pre
     void checkFieldTickWorks() throws InterruptedException {
         TimeSimulator timeSimulator = new TimeSimulator();
         Rabbit maleRabbit = new Rabbit();
@@ -19,8 +21,8 @@ public class TimeSimulatorTest {
         femaleRabbit.setGender("female");
         Field.addRabbit(maleRabbit);
         Field.addRabbit(femaleRabbit);
-        timeSimulator.initialiseTimeSimulator(120);
-        Thread.currentThread().join();
+        timeSimulator.initialiseTimeSimulator(40);
+        Thread.currentThread().join(40000);
         assertTrue(Field.getRabbits().size()>10);
     }
 }

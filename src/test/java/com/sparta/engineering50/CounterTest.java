@@ -11,14 +11,14 @@ public class CounterTest {
 
     @Test
     public void doesMaleCounterIncrease() {
-        rabbitcounter.increaseMaleCounter();
-        assertEquals(1, rabbitcounter.getMaleRabbitCounter());
+        RabbitCounter.increaseMaleCounter();
+        assertEquals(1, RabbitCounter.getMaleRabbitCounter());
     }
 
     @Test
     public void doesFemaleCounterIncrease() {
-        rabbitcounter.increaseFemaleCounter();
-        assertEquals(1, rabbitcounter.getFemaleRabbitCounter());
+        RabbitCounter.increaseFemaleCounter();
+        assertEquals(1, RabbitCounter.getFemaleRabbitCounter());
     }
 
 }
