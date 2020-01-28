@@ -19,14 +19,16 @@
 
 * have a more clear definition of done at the end of the sprints
 
-### 1st sprint:
+### 1st sprint (9:20 - 10:20):
 
 Goals: 
 
-* use git (blocker)
+* use git (blocker) -(Jack and James)
+
+* add main/field/world class 
 
 * Run tests on what we have done so far (rabbit class) and see if it works
 
-* add main/field/world class
-
 * merge the rabbit counter classes
+
+
