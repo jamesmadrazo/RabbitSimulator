@@ -15,10 +15,14 @@ public class Rabbit {
 
     }
 
+    //Only use it for testing!
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
     public String getGender() {
         return gender;
     }
-
 
 
     public void setState(String state) {
@@ -54,5 +58,20 @@ public class Rabbit {
         }
 
     }
+
+    public void getPregnant(){
+        if (gender.equals("female")){
+            state = "pregnant";
+        }
+    }
+
+    public void giveBirth(){
+        if (state.equals("pregnant")){
+            state = "adult";
+        }
+        //return array of 1-14 new rabbits
+    }
+
+
 }
 
