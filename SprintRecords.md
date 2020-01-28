@@ -95,6 +95,8 @@ Review:
 
 * need to make it more clear what each task includes at the start of the sprint so we don't make conflicting methods
 
+## Tuesday Afternoon - Scrum Master: Jack
+
 ## 4th Sprint (13:46 - 14:46) 
 
 Goals: 
