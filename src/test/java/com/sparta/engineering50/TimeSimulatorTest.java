@@ -21,9 +21,9 @@ public class TimeSimulatorTest {
         Field.addRabbit(new Rabbit());
         Field.addRabbit(new Rabbit());
         Field.addRabbit(new Rabbit());
-        timeSimulator.initialiseTimeSimulator(2);
-        Thread.sleep(2000);
-        System.out.println(Field.getRabbits().size());
+        timeSimulator.initialiseTimeSimulator(8);
+        Thread.sleep(8000);
+        System.out.println(timeSimulator.toAdd.size());
         assertTrue(Field.getRabbits().size()>8);
     }
 }
