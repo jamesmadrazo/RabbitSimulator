@@ -14,7 +14,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/IdeaProjects/RabbitSimulator" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../RabbitSimulator" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -50,5 +50,9 @@
       <screen x="0" y="0" width="1474" height="864" />
     </state>
     <state x="518" y="188" key="FileChooserDialogImpl/0.0.1474.864@0.0.1474.864" timestamp="1580145581578" />
+    <state x="330" y="162" key="Vcs.Push.Dialog.v2" timestamp="1580205301942">
+      <screen x="0" y="0" width="1474" height="864" />
+    </state>
+    <state x="330" y="162" key="Vcs.Push.Dialog.v2/0.0.1474.864@0.0.1474.864" timestamp="1580205301942" />
   </component>
 </project>
