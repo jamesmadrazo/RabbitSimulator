@@ -85,6 +85,15 @@ public class RabbitTest {
         arrayOfRabbits = rabbit.giveBirth();
         assertTrue(arrayOfRabbits.size() > 0);
     }
-
+    @Test
+    public void rabbitMaleCounterShouldBeOne() {
+        RabbitCounter.increaseMaleCounter();
+        assertEquals(1, RabbitCounter.getMaleRabbitCounter());
+    }
+    @Test
+    public void rabbitFemaleCounterShouldBeOne() {
+        RabbitCounter.increaseFemaleCounter();
+        assertEquals(1,RabbitCounter.getFemaleRabbitCounter());
+    }
 
 }

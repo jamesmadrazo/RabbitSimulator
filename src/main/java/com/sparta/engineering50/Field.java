@@ -3,24 +3,28 @@ package com.sparta.engineering50;
 import java.util.ArrayList;
 
 public class Field {
-    private ArrayList<Rabbit> rabbits = new ArrayList<>();
+    private static ArrayList<Rabbit> rabbits = new ArrayList<>();
 
-    public ArrayList<Rabbit> getRabbits() {
+    public static ArrayList<Rabbit> getRabbits() {
         return rabbits;
     }
 
     //method for testing
-    public void addRabbit(Rabbit rabbit) {
+    public static void addRabbit(Rabbit rabbit) {
         rabbits.add(rabbit);
     }
 
-    public void addRabbits(ArrayList<Rabbit> rabbitArray) {
+    public static void addRabbits(ArrayList<Rabbit> rabbitArray) {
         for(Rabbit rabbit:rabbitArray) {
             addRabbit(rabbit);
         }
     }
 
-    public void breed() {
+    public void createRabbit() {
+        rabbits.add(new Rabbit());
+    }
+
+    public static void breed() {
         int rabbitCounter = 0;
         while (rabbitCounter <= rabbits.size())
             for (Rabbit rabbit:rabbits) {
