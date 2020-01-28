@@ -41,7 +41,7 @@ Sprint:
 
 * Thanu and James reviewed the tests we have so far and added new ones
 
-* merge the rabbit counter classes - due to blockers with git, moved this to next sprint
+* merge the rabbit counter classes - due to blockers with git, moved this to a later sprint
 
 Sprint review (10:25-10:38): 
 
@@ -51,13 +51,13 @@ Sprint review (10:25-10:38):
 
 * start next sprint with 10 git best practice 
 
-### 2nd sprint (10:53 - 11:53):
+### 2nd sprint (10:53 - 11:10):
 
 Goals:
 
-* discuss git best practice that everyone can follow
+* short sprint to discuss git best practice that everyone can follow so that we can move on
 
-* merge the rabbit counter classes
+
 
 
 
