@@ -10,8 +10,8 @@ public class Output {
 
     public static void returnRabbitCounter(){
 
-for (int y = 0; y < Field.rabbits.size()-1; y++){
-    if (Field.rabbits.get(y).getGender() == "male"){
+for (int y = 0; y < Field.getRabbits().size()-1; y++){
+    if (Field.getRabbits().get(y).getGender() == "male"){
         RabbitCounter.increaseMaleCounter();
     }
     else {
