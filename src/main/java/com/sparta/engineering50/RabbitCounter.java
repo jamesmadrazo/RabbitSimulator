@@ -19,7 +19,6 @@ public static void increaseMaleCounter(){
       //  return rabbitCounterFemale;
     }
     public static int getFemaleRabbitCounter() {
-
         return rabbitCounterFemale;
     }
 
