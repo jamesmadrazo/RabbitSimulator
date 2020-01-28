@@ -1,6 +1,8 @@
 package com.sparta.engineering50;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import org.junit.jupiter.api.Test;
 
 public class RabbitTest {
@@ -13,10 +15,17 @@ public class RabbitTest {
     public void stateShouldBeYoung() {
         assertEquals("young",rabbit.getState());
     }
-    /*@Test
+    @Test
     public void genderShouldBeMaleOrFemale() {
-        assertEquals("male", rabbit.getGender()) || assertEquals("Female", rabbit.getGender());
-    }*/
+        String[] genders = new String[]{"male","female"};
+        boolean isGender = false;
+        for (String s:genders){
+            if (s.equals(rabbit.getGender())) {
+                isGender = true;
+            }
+        }
+        assertTrue(isGender);
+    }
     @Test
     public void stateShouldChangeToAdultAfterThreeMonths() {
         Rabbit rabbit1 = new Rabbit();
