@@ -67,13 +67,15 @@ Sprint:
 
 * From now on, we will create branches for new features (so far we just created them based on names but we won't use those from now on).
 
+* Meanwhile: Thanu and James merged the rabbit counter classes into one.
+
 ## 3rd Sprint (11:30 - 12:30) 
 
 Goals: 
 
 * Time Implementation - (James and Thanu)
 
-* Threads: on simulating time and one handling rabbits - (Jack and Conor) 
+* Threads: on simulating time and one handling rabbits - (Jack and Conor) - decide if we actually need this
 
 * Rabbit states: age the rabbits method - (Tyler and Emese) 
 
