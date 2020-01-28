@@ -57,6 +57,30 @@ Goals:
 
 * short sprint to discuss git best practice that everyone can follow so that we can move on
 
+Sprint: 
+
+* James had a technical issue and had to reinstall git.
+
+* Added *.xml to gitignore file because it was cuasing git issues while merging. 
+
+* But other than that we are now up to date with git.
+
+* From now on, we will create branches for new features (so far we just created them based on names but we won't use those from now on).
+
+## 3rd Sprint (11:30 - 12:30) 
+
+Goals: 
+
+* Time Implementation - (James and Thanu)
+
+* Threads: on simulating time and one handling rabbits - (Jack and Conor) 
+
+* Rabbit states: age the rabbits method - (Tyler and Emese) 
+
+Sprint: 
+
+* 
+
 
 
 
