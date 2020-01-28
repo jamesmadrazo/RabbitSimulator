@@ -23,12 +23,20 @@
 
 Goals: 
 
-* use git (blocker) -(everyone)
+* use git
 
 * add main/field/world class - (Tyler, Emese)
 
 * Run tests on what we have done so far (rabbit class) and see if it works
 
+* merge the rabbit counter classes 
+
+Sprint: 
+
+* use git (blocker) -(everyone) - issue: we don't know how to merge branches
+
+* field class added - on Tylers branch
+
+* Tests run (On Tylers branch) 
+
 * merge the rabbit counter classes - due to blockers with git, moved this to next sprint
-
-
