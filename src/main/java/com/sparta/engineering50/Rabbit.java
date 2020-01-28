@@ -50,9 +50,7 @@ public class Rabbit {
             return "male";
         } else {
             return "female";
-
         }
-
     }
 }
 
