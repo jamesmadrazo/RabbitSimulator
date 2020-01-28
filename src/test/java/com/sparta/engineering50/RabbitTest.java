@@ -29,9 +29,48 @@ public class RabbitTest {
     @Test
     public void stateShouldChangeToAdultAfterThreeMonths() {
         Rabbit rabbit1 = new Rabbit();
-        for(int i=0; i<4; i++) {
+        for(int i=0; i<=3; i++) {
             rabbit1.increaseAge();
         }
         assertEquals("adult", rabbit1.getState());
     }
+
+    @Test
+    public void testIfRabbitDiedAfter60Months(){
+        Rabbit rabbit2 = new Rabbit();
+        for(int i=0; i<=60; i++) {
+            rabbit2.increaseAge();
+        }
+        assertEquals("dead", rabbit2.getState());
+    }
+
+    //this is not accounting for rabbits being adult yet, as rabbits are not aged yet
+    //we will account for only adult getting pregnant in breeding
+    @Test
+    public void testIfFemaleRabbitGotPregnant(){
+        Rabbit rabbit3 = new Rabbit();
+        rabbit3.setGender("female");
+        rabbit3.getPregnant();
+        assertEquals("pregnant", rabbit3.getState());
+    }
+
+    @Test
+    public void testIfMaleRabbitGotPregnant(){
+        Rabbit rabbit3 = new Rabbit();
+        rabbit3.setGender("male");
+        rabbit3.getPregnant();
+        assertEquals("young", rabbit3.getState());
+    }
+
+    @Test
+    public void testIfFemaleRabbitGaveBirthItIsAdultAfterward(){
+        Rabbit rabbit3 = new Rabbit();
+        rabbit3.setGender("female");
+        rabbit3.getPregnant();
+        rabbit3.giveBirth();
+        assertEquals("adult", rabbit3.getState());
+    }
+
+
+
 }
