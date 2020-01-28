@@ -1,5 +1,6 @@
 package com.sparta.engineering50;
 
+import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -12,6 +13,12 @@ public class TimeSimulator {
             @Override
             public void run() {
                 count++;
+                for(Rabbit rabbit: Field.getRabbits()) {
+                    rabbit.increaseAge();
+                    Field.addRabbits(rabbit.giveBirth());
+                }
+                Field.breed();
+                System.out.println(1);
                 if (count >= seconds) {
                     timer.cancel();
                     timer.purge();
