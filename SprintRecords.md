@@ -39,4 +39,6 @@ Sprint:
 
 * Tests run ( works on Tyler's branch) 
 
+* Thanu and James reviewed the tests we have so far and added new ones
+
 * merge the rabbit counter classes - due to blockers with git, moved this to next sprint
