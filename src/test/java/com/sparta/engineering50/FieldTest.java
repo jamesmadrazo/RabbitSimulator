@@ -77,6 +77,10 @@ public class FieldTest {
         assertNotEquals("pregnant", maleRabbit.getState());
         assertEquals("pregnant", femaleRabbit.getState());
         assertEquals("pregnant", femaleRabbit1.getState());
+        assertEquals("pregnant", femaleRabbit1.getState());
+        assertEquals("pregnant", femaleRabbit1.getState());
+        assertEquals("pregnant", femaleRabbit1.getState());
+        assertEquals("pregnant", femaleRabbit1.getState());
 
     }
 
