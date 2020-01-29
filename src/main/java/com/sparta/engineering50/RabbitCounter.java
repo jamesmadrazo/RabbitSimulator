@@ -10,6 +10,14 @@ public class RabbitCounter {
         aliveRabbitCounterMale++;
     }
 
+    public static void decreaseAliveRabbitCounterMale() {
+        aliveRabbitCounterMale--;
+    }
+
+    public static void decreaseAliveRabbitCounterFemale() {
+        aliveRabbitCounterFemale--;
+    }
+
     public static void increaseFemaleCounter() {
         aliveRabbitCounterFemale++;
     }

@@ -52,8 +52,14 @@ public class Rabbit {
         if (age == 3) {
             setState("adult");
             setAvailable(true);
-        } else if (age == 60) {
+        } else if (age == 6) {
             setState("dead");
+            RabbitCounter.deadCounterIncrease();
+            if(gender.equals("male")) {
+                RabbitCounter.decreaseAliveRabbitCounterMale();
+            } else {
+                RabbitCounter.decreaseAliveRabbitCounterFemale();
+            }
             setAvailable(false);
         }
     }
@@ -62,8 +68,10 @@ public class Rabbit {
         Random random = new Random();
         boolean result = random.nextBoolean();
         if (result) {
+            RabbitCounter.increaseMaleCounter();
             return "male";
         } else {
+            RabbitCounter.increaseFemaleCounter();
             return "female";
         }
     }
