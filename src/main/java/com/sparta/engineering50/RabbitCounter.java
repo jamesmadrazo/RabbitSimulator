@@ -2,36 +2,35 @@ package com.sparta.engineering50;
 
 public class RabbitCounter {
 
-    static int rabbitCounterFemale;
-    static int rabbitCounterMale;
-    static int deadCounter;
-
-    public RabbitCounter() {
-        //rabbitCounterFemale++;
-        // rabbitCounterMale++;
-    }
+    private static int aliveRabbitCounterFemale;
+    private static int aliveRabbitCounterMale;
+    private static int deadCounter;
 
     public static void increaseMaleCounter() {
-        rabbitCounterMale++;
-        // return rabbitCounterMale;
+        aliveRabbitCounterMale++;
+    }
+
+    public static void decreaseAliveRabbitCounterMale() {
+        aliveRabbitCounterMale--;
+    }
+
+    public static void decreaseAliveRabbitCounterFemale() {
+        aliveRabbitCounterFemale--;
     }
 
     public static void increaseFemaleCounter() {
-        rabbitCounterFemale++;
-        //  return rabbitCounterFemale;
+        aliveRabbitCounterFemale++;
     }
 
     public static int getFemaleRabbitCounter() {
-
-        return rabbitCounterFemale;
+        return aliveRabbitCounterFemale;
     }
 
     public static int getMaleRabbitCounter() {
-        return rabbitCounterMale;
+        return aliveRabbitCounterMale;
     }
 
-    public
-    static void deadCounterIncrease() {
+    public static void deadCounterIncrease() {
         deadCounter++;
     }
 
