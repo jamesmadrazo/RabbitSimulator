@@ -8,6 +8,7 @@ public class Rabbit {
     private String gender;
     private String state;
     private boolean isAvailable;
+    private boolean rabbitCooldown;
 
     public boolean isAvailable() {
         return isAvailable;
@@ -46,7 +47,7 @@ public class Rabbit {
         return age;
     }
 
-    public int increaseAge() {
+    public void increaseAge() {
         age++;
         if (age == 3) {
             setState("adult");
@@ -55,13 +56,12 @@ public class Rabbit {
             setState("dead");
             setAvailable(false);
         }
-        return age;
     }
 
     private String offSpringGender() {
         Random random = new Random();
-        Boolean result = random.nextBoolean();
-        if (result == true) {
+        boolean result = random.nextBoolean();
+        if (result) {
             return "male";
         } else {
             return "female";
@@ -71,6 +71,8 @@ public class Rabbit {
     public void getPregnant() {
         if (gender.equals("female")) {
             state = "pregnant";
+        } else {
+            rabbitCooldown = true;
         }
         setAvailable(false);
     }
@@ -89,8 +91,12 @@ public class Rabbit {
             }
 
         }
-        state = "adult";
-        setAvailable(true);
+        if (rabbitCooldown) {
+            rabbitCooldown = false;
+        } else {
+            state = "adult";
+            setAvailable(true);
+        }
         return arrayOfRabbits;
     }
 
