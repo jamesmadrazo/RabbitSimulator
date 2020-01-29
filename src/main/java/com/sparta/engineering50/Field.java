@@ -25,14 +25,14 @@ public class Field {
             for (Rabbit rabbit : rabbits) {
                 rabbitCounter++;
                 if (rabbit.isAvailable() && rabbit.getGender().equals("female")) {
-                    /*for (Rabbit rabbit1 : rabbits) {
+                    for (Rabbit rabbit1 : rabbits) {
                         if (rabbit1.isAvailable() && rabbit1.getGender().equals("female")) {
                             rabbit1.getPregnant();
                             rabbit.setAvailable(false);
                             rabbitCounter = 0;
                             break;
                         }
-                    }*/
+                    }
                     rabbit.getPregnant();
                 }
             }
