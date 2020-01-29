@@ -38,4 +38,8 @@ public class RabbitCounter {
         return deadCounter;
     }
 
+    public static int getTotalRabbits() {
+        return deadCounter+aliveRabbitCounterMale+aliveRabbitCounterFemale;
+    }
+
 }
