@@ -5,7 +5,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class TimeSimulator {
-    static int count = 0;
+    int count = 0;
 
     ArrayList<Rabbit> toAdd = new ArrayList();
 
@@ -32,9 +32,10 @@ public class TimeSimulator {
                     }
                     Field.addRabbits(toAdd); // double adding??
                     toAdd.clear();
+                    //System.out.println(Field.getRabbits().size());
                     Field.breed();
                 }
-                System.out.println("Seconds: " + count + " Rabbits: " + Field.getRabbits().size()); // Can be removed later
+                System.out.println("Month: " + count + " Rabbits: " + RabbitCounter.getTotalRabbits()); // Can be removed later
                 if (count >= seconds) {
                     timer.cancel();
                     timer.purge();
@@ -44,7 +45,7 @@ public class TimeSimulator {
             ;
         };
 
-        timer.scheduleAtFixedRate(timerTask, 1000, 1000);
+        timer.scheduleAtFixedRate(timerTask, 0, 1000);
     }
 
     public int getCount() {

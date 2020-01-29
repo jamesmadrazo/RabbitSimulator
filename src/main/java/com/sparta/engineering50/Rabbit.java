@@ -46,24 +46,36 @@ public class Rabbit {
         return age;
     }
 
-    public int increaseAge() {
+    public void increaseAge() {
         age++;
         if (age == 3) {
             setState("adult");
-            setAvailable(true);
+            //setAvailable(true);
+            if (gender.equals("male")) {
+                Field.addMale(this);
+            } else {
+                Field.addFemale(this);
+            }
         } else if (age == 60) {
             setState("dead");
+            RabbitCounter.deadCounterIncrease();
+            if(gender.equals("male")) {
+                RabbitCounter.decreaseAliveRabbitCounterMale();
+            } else {
+                RabbitCounter.decreaseAliveRabbitCounterFemale();
+            }
             setAvailable(false);
         }
-        return age;
     }
 
     private String offSpringGender() {
         Random random = new Random();
-        Boolean result = random.nextBoolean();
-        if (result == true) {
+        boolean result = random.nextBoolean();
+        if (result) {
+            RabbitCounter.increaseMaleCounter();
             return "male";
         } else {
+            RabbitCounter.increaseFemaleCounter();
             return "female";
         }
     }
@@ -71,10 +83,8 @@ public class Rabbit {
     public void getPregnant() {
         if (gender.equals("female")) {
             state = "pregnant";
-        } else {
-            state = "adult";
         }
-        isAvailable = false;
+        setAvailable(false);
     }
 
     public ArrayList<Rabbit> giveBirth() {
@@ -89,10 +99,12 @@ public class Rabbit {
             for (int i = randomNumber; i > 0; i--) {
                 arrayOfRabbits.add(new Rabbit());
             }
+            state = "adult";
+            setAvailable(true);
 
+        } else if (getState().equals("adult")){
+            setAvailable(true);
         }
-        state = "adult";
-        setAvailable(true);
         return arrayOfRabbits;
     }
 
