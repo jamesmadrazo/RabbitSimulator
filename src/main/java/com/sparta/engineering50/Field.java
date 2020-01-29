@@ -1,9 +1,12 @@
 package com.sparta.engineering50;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Field {
     private static ArrayList<Rabbit> rabbits = new ArrayList<>();
+    private static ArrayList<Rabbit> availableMales = new ArrayList<>();
+    private static ArrayList<Rabbit> availableFemales = new ArrayList<>();
 
     public static ArrayList<Rabbit> getRabbits() {
         return rabbits;
@@ -13,6 +16,22 @@ public class Field {
         rabbits.add(rabbit);
     }
 
+    public static void addMale(Rabbit rabbit) {
+        availableMales.add(rabbit);
+    }
+
+    public static void addFemale(Rabbit rabbit) {
+        availableFemales.add(rabbit);
+    }
+
+    public static ArrayList<Rabbit> getAvailableMales() {
+        return availableMales;
+    }
+
+    public static ArrayList<Rabbit> getAvailableFemales() {
+        return availableFemales;
+    }
+
     public static void addRabbits(ArrayList<Rabbit> rabbitArray) {
         for (Rabbit rabbit : rabbitArray) {
             addRabbit(rabbit);
@@ -20,29 +39,14 @@ public class Field {
     }
 
     public static void breed() {
-        int malePosition = -1;
-        int femalePosition = -1;
-        int count = 0;
-
-        while(count < rabbits.size()) {
-            if (rabbits.get(count).isAvailable() && rabbits.get(count).getGender().equals("male") && malePosition == -1) {
-                malePosition = count;
-                count = 0;
+        Random random = new Random();
+        int loopLength = 0;
+        loopLength = Math.min(availableMales.size(), availableFemales.size());
+        for (int i = 0; i < loopLength ; i++) {
+            availableMales.get(i).getPregnant();
+            if (random.nextBoolean()) {
+                availableFemales.get(i).getPregnant();
             }
-
-            if (rabbits.get(count).isAvailable() && rabbits.get(count).getGender().equals("female") && femalePosition == -1) {
-                femalePosition = count;
-                count = 0;
-            }
-
-            if (malePosition != -1 && femalePosition != -1) {
-                rabbits.get(femalePosition).getPregnant();
-                rabbits.get(malePosition).setAvailable(false);
-                malePosition = -1;
-                femalePosition = -1;
-                count = 0;
-            }
-            count++;
         }
     }
 

@@ -50,7 +50,12 @@ public class Rabbit {
         age++;
         if (age == 3) {
             setState("adult");
-            setAvailable(true);
+            //setAvailable(true);
+            if (gender.equals("male")) {
+                Field.addMale(this);
+            } else {
+                Field.addFemale(this);
+            }
         } else if (age == 60) {
             setState("dead");
             RabbitCounter.deadCounterIncrease();
