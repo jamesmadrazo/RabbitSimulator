@@ -71,10 +71,8 @@ public class Rabbit {
     public void getPregnant() {
         if (gender.equals("female")) {
             state = "pregnant";
-        } else {
-            state = "adult";
         }
-        isAvailable = false;
+        setAvailable(false);
     }
 
     public ArrayList<Rabbit> giveBirth() {

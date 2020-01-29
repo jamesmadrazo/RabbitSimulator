@@ -21,7 +21,7 @@ public class Field {
 
     public static void breed() {
         int rabbitCounter = 0;
-        while (rabbitCounter <= rabbits.size())
+        while (rabbitCounter < rabbits.size())
             for (Rabbit rabbit : rabbits) {
                 rabbitCounter++;
                 if (rabbit.isAvailable() && rabbit.getGender().equals("male")) {
