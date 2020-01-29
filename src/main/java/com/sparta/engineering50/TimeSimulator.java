@@ -31,6 +31,7 @@ public class TimeSimulator {
                         addRabbits(rabbit.giveBirth());
                     }
                     Field.addRabbits(toAdd); // double adding??
+                    toAdd.clear();
                     Field.breed();
                 }
                 System.out.println("Seconds: " + count + " Rabbits: " + Field.getRabbits().size()); // Can be removed later
