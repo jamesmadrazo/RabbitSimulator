@@ -53,19 +53,19 @@ public class FieldTest {
     public void testThatTwoMalesTwoFemaleResultsInTwoFemalePregnant() {
         Rabbit maleRabbit = new Rabbit();
         maleRabbit.setGender("male");
-        Rabbit maleRabbit1 = new Rabbit();
+    Rabbit maleRabbit1 = new Rabbit();
         maleRabbit1.setGender("male");
-        Rabbit femaleRabbit = new Rabbit();
+    Rabbit femaleRabbit = new Rabbit();
         femaleRabbit.setGender("female");
-        Rabbit femaleRabbit1 = new Rabbit();
+    Rabbit femaleRabbit1 = new Rabbit();
         femaleRabbit1.setGender("female");
 
         for (int i = 0; i <= 3; i++) {
-            maleRabbit.increaseAge();
-            maleRabbit1.increaseAge();
-            femaleRabbit.increaseAge();
-            femaleRabbit1.increaseAge();
-        }
+        maleRabbit.increaseAge();
+        maleRabbit1.increaseAge();
+        femaleRabbit.increaseAge();
+        femaleRabbit1.increaseAge();
+    }
         Field.addRabbit(maleRabbit);
         Field.addRabbit(maleRabbit1);
         Field.addRabbit(femaleRabbit);
@@ -73,16 +73,16 @@ public class FieldTest {
 
         Field.breed();
 
-        assertNotEquals("pregnant", maleRabbit.getState());
-        assertNotEquals("pregnant", maleRabbit.getState());
-        assertEquals("pregnant", femaleRabbit.getState());
-        assertEquals("pregnant", femaleRabbit1.getState());
-        assertEquals("pregnant", femaleRabbit1.getState());
-        assertEquals("pregnant", femaleRabbit1.getState());
-        assertEquals("pregnant", femaleRabbit1.getState());
-        assertEquals("pregnant", femaleRabbit1.getState());
+    assertNotEquals("pregnant", maleRabbit.getState());
+    assertNotEquals("pregnant", maleRabbit.getState());
+    assertEquals("pregnant", femaleRabbit.getState());
+    assertEquals("pregnant", femaleRabbit1.getState());
+    assertEquals("pregnant", femaleRabbit1.getState());
+    assertEquals("pregnant", femaleRabbit1.getState());
+    assertEquals("pregnant", femaleRabbit1.getState());
+    assertEquals("pregnant", femaleRabbit1.getState());
 
-    }
+}
 
     @Test
     public void testThatNewRabbitsAreAddedToRabbitArray () {
