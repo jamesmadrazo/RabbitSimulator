@@ -65,8 +65,11 @@ public class RabbitTest {
     public void testIfMaleRabbitGotPregnant() {
         Rabbit rabbit = new Rabbit();
         rabbit.setGender("male");
+        for (int i = 0; i <= 3; i++) {
+            rabbit.increaseAge();
+        }
         rabbit.getPregnant();
-        assertEquals("young", rabbit.getState());
+        assertEquals("adult", rabbit.getState());
     }
 
     @Test

@@ -72,6 +72,9 @@ public class Rabbit {
         if (gender.equals("female")) {
             state = "pregnant";
         }
+        /*else {
+            state = "adult";
+        }*/
         setAvailable(false);
     }
 
@@ -87,10 +90,14 @@ public class Rabbit {
             for (int i = randomNumber; i > 0; i--) {
                 arrayOfRabbits.add(new Rabbit());
             }
+            state = "adult";
+            setAvailable(true);
 
         }
-        state = "adult";
-        setAvailable(true);
+        if (getGender().equals("male") && getState().equals("adult")){
+            setAvailable(true);
+        }
+
         return arrayOfRabbits;
     }
 
