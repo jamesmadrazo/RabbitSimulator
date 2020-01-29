@@ -75,7 +75,7 @@ public class Rabbit {
         /*else {
             state = "adult";
         }*/
-        isAvailable = false;
+        setAvailable(false);
     }
 
     public ArrayList<Rabbit> giveBirth() {

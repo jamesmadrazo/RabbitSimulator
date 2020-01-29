@@ -5,7 +5,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class TimeSimulator {
-    static int count = 0;
+    int count = 0;
 
     ArrayList<Rabbit> toAdd = new ArrayList();
 
@@ -25,6 +25,7 @@ public class TimeSimulator {
             @Override
             public void run() {
                 count++;
+                System.out.println(count);
                 synchronized (Field.getRabbits()) {
                     for (Rabbit rabbit : Field.getRabbits()) {
                         rabbit.increaseAge();
