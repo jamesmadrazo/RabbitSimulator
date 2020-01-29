@@ -21,7 +21,7 @@ public class TimeSimulatorTest {
         femaleRabbit.setGender("female");
         Field.addRabbit(maleRabbit);
         Field.addRabbit(femaleRabbit);
-        timeSimulator.initialiseTimeSimulator(10);
+        timeSimulator.initialiseTimeSimulator(15);
         Thread.currentThread().join(10000);
         assertTrue(Field.getRabbits().size()>10);
     }
