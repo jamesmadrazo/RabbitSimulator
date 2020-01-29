@@ -25,7 +25,6 @@ public class TimeSimulator {
             @Override
             public void run() {
                 count++;
-                System.out.println(count);
                 synchronized (Field.getRabbits()) {
                     for (Rabbit rabbit : Field.getRabbits()) {
                         rabbit.increaseAge();
@@ -36,7 +35,7 @@ public class TimeSimulator {
                     //System.out.println(Field.getRabbits().size());
                     Field.breed();
                 }
-                System.out.println("Seconds: " + count + " Rabbits: " + Field.getRabbits().size()); // Can be removed later
+                System.out.println("Month: " + count + " Rabbits: " + RabbitCounter.getTotalRabbits()); // Can be removed later
                 if (count >= seconds) {
                     timer.cancel();
                     timer.purge();
