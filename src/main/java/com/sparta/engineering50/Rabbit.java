@@ -82,6 +82,9 @@ public class Rabbit {
         } else {
             rabbitCooldown = true;
         }
+        /*else {
+            state = "adult";
+        }*/
         setAvailable(false);
     }
 
@@ -97,12 +100,11 @@ public class Rabbit {
             for (int i = randomNumber; i > 0; i--) {
                 arrayOfRabbits.add(new Rabbit());
             }
+            state = "adult";
+            setAvailable(true);
 
         }
-        if (rabbitCooldown) {
-            rabbitCooldown = false;
-        } else {
-            state = "adult";
+        if (getGender().equals("male") && getState().equals("adult")){
             setAvailable(true);
         }
         return arrayOfRabbits;
