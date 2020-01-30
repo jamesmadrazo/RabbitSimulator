@@ -23,12 +23,12 @@ public class Fox {
     }
 
     //Only use it for testing!
-    public void setFoxGender(String foxGender) {
-        this.foxGender = foxGender;
+    public void setGender(String foxGender) {
+        this.gender = foxGender;
     }
 
-    public String getFoxGender() {
-        return foxGender;
+    public String getGender() {
+        return gender;
     }
 
     public int getAge() {

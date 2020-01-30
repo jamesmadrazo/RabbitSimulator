@@ -11,7 +11,7 @@ public class FoxTest {
 
     @Test
     public void ageShouldBeZero() {
-        assertEquals(0, fox.getFoxAge());
+        assertEquals(0, fox.getAge());
     }
 
     @Test
