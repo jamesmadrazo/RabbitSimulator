@@ -90,4 +90,11 @@ public class FoxFieldTest {
         FoxField.addFoxes(newFoxes);
         assertTrue(FoxField.getFoxes().size()>0);
     }
+
+    @Test
+    public void testRandomPreyMethod() {
+        Fox fox = new Fox();
+        FoxField.addFox(fox);
+        assertTrue(FoxField.randomNumberOfPrey() <= 20);
+    }
 }
