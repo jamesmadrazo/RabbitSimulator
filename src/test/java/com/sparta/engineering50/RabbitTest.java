@@ -1,11 +1,10 @@
 package com.sparta.engineering50;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class RabbitTest {
     Rabbit rabbit = new Rabbit();
@@ -16,8 +15,16 @@ public class RabbitTest {
     }
 
     @Test
-    public void stateShouldBeYoung() {
-        assertEquals("young", rabbit.getState());
+    public void newRabbitShouldNotBeInAvailableRabbitsBecauseYoung() {
+        boolean found = false;
+        rabbit.setGender("female");
+        for (Rabbit fieldRabbit:Field.getAvailableFemaleRabbits()){
+            if (rabbit == fieldRabbit) {
+                found = true;
+                break;
+            }
+        }
+        assertFalse(found);
     }
 
     @Test
@@ -34,21 +41,32 @@ public class RabbitTest {
     }
 
     @Test
-    public void stateShouldChangeToAdultAfterThreeMonths() {
-        Rabbit rabbit = new Rabbit();
+    public void adultRabbitShouldNotBeInAvailableRabbitsBecauseAvailable() {
+        boolean found = false;
+        rabbit.setGender("female");
         for (int i = 0; i <= 3; i++) {
             rabbit.increaseAge();
         }
-        assertEquals("adult", rabbit.getState());
+        for (Rabbit fieldRabbit:Field.getAvailableFemaleRabbits()){
+            if (rabbit == fieldRabbit) {
+                found = true;
+                break;
+            }
+        }
+        assertTrue(found);
     }
 
     @Test
-    public void testIfRabbitDiedAfter60Months() {
-        Rabbit rabbit = new Rabbit();
-        for (int i = 0; i <= 60; i++) {
-            rabbit.increaseAge();
+    public void oldRabbitShouldNotBeInAvailableRabbitsBecauseDead() {
+        boolean found = false;
+        rabbit.setGender("female");
+        for (Rabbit fieldRabbit:Field.getAvailableFemaleRabbits()){
+            if (rabbit == fieldRabbit) {
+                found = true;
+                break;
+            }
         }
-        assertEquals("dead", rabbit.getState());
+        assertFalse(found);
     }
 
     //this is not accounting for rabbits being adult yet, as rabbits are not aged yet
@@ -58,7 +76,7 @@ public class RabbitTest {
         Rabbit rabbit = new Rabbit();
         rabbit.setGender("female");
         rabbit.getPregnant();
-        assertEquals("pregnant", rabbit.getState());
+        assertTrue(rabbit.isPregnant());
     }
 
     @Test
@@ -69,22 +87,32 @@ public class RabbitTest {
             rabbit.increaseAge();
         }
         rabbit.getPregnant();
-        assertEquals("adult", rabbit.getState());
+        assertFalse(rabbit.isPregnant());
     }
 
     @Test
-    public void testIfFemaleRabbitGaveBirthItIsAdultAfterward() {
+    public void testIfFemaleRabbitGaveBirthItIsAvailableAfterward() {
         Rabbit rabbit = new Rabbit();
         rabbit.setGender("female");
+        for (int i = 0; i <= 3; i++) {
+            rabbit.increaseAge();
+        }
         rabbit.getPregnant();
         rabbit.giveBirth();
-        assertEquals("adult", rabbit.getState());
+        boolean found = false;
+        for (Rabbit fieldRabbit:Field.getAvailableFemaleRabbits()){
+            if (rabbit == fieldRabbit) {
+                found = true;
+                break;
+            }
+        }
+        assertTrue(found);
     }
 
     @Test
     public void testThatRabbitGivesBirth() {
         Rabbit rabbit = new Rabbit();
-        rabbit.setState("pregnant");
+        rabbit.setPregnant(true);
         ArrayList<Rabbit> arrayOfRabbits = new ArrayList<>();
         arrayOfRabbits = rabbit.giveBirth();
         assertTrue(arrayOfRabbits.size() > 0);

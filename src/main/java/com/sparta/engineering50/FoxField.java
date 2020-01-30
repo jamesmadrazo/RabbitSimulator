@@ -12,7 +12,7 @@ public class FoxField {
         return foxes;
     }
 
-    public static void addRabbit(Fox fox) {
+    public static void addFox(Fox fox) {
         foxes.add(fox);
     }
 

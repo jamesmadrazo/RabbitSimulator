@@ -200,4 +200,34 @@ Review:
 
 * Start working on the killing method/implementation (Conor)
 
-## Sprint 2 - (12.30pm - 
+Review:
+
+* Took a while to get started because of working remotely but managed to complete most of the goals
+
+* Some slight github merging delays but also completed
+
+* Decided it should be ok to use JDBC so will begin attempted implementation in the next sprint
+
+## Sprint 2 - (12.30pm - 1.30pm)
+
+* Fix tests and added more for the new fox and foxfield classes (Tyler and Emese)
+
+* Continue working on killing method, decided to split it into two to make it easier (Conor)
+
+* Begin implementation of JDBC (Jack)
+
+* Work on the Fox Counter (Thanu and James)
+
+Review:
+
+* All tasks done other than killing method as this was more complicated than expected, so splitting it between three next sprint.
+
+* Jack has done the start of the JDBC implementation, slight issue but confident knows a fix.
+
+## Sprint 3 (1.30pm - 3pm(?))
+
+* Work on killing method (Conor, Tyler and Emese)
+
+* Continue JDBC implementation (Jack)
+
+* TBC (Thanu and James)

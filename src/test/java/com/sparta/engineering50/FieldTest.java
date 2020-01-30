@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class FieldTest {
+    // These tests pass if you remove the random element for pregnancy but they pass otherwise
     @Test
     void testThatRabbitsCanGetPregnant() {
         Rabbit maleRabbit = new Rabbit();
@@ -20,7 +21,7 @@ public class FieldTest {
         Field.addRabbit(maleRabbit);
         Field.addRabbit(femaleRabbit);
         Field.breed();
-        assertEquals("pregnant", femaleRabbit.getState());
+        assertTrue(femaleRabbit.isPregnant());
     }
 
     @Test
@@ -43,9 +44,9 @@ public class FieldTest {
         System.out.println(Field.getRabbits().size());
         Field.breed();
 
-        assertNotEquals("pregnant", maleRabbit.getState());
-        assertEquals("pregnant", femaleRabbit.getState());
-        assertNotEquals("pregnant", femaleRabbit1.getState());
+        assertFalse(maleRabbit.isPregnant());
+        assertTrue(femaleRabbit.isPregnant());
+        assertFalse(femaleRabbit1.isPregnant());
 
     }
 
@@ -53,19 +54,19 @@ public class FieldTest {
     public void testThatTwoMalesTwoFemaleResultsInTwoFemalePregnant() {
         Rabbit maleRabbit = new Rabbit();
         maleRabbit.setGender("male");
-    Rabbit maleRabbit1 = new Rabbit();
+        Rabbit maleRabbit1 = new Rabbit();
         maleRabbit1.setGender("male");
-    Rabbit femaleRabbit = new Rabbit();
+        Rabbit femaleRabbit = new Rabbit();
         femaleRabbit.setGender("female");
-    Rabbit femaleRabbit1 = new Rabbit();
+        Rabbit femaleRabbit1 = new Rabbit();
         femaleRabbit1.setGender("female");
 
         for (int i = 0; i <= 3; i++) {
-        maleRabbit.increaseAge();
-        maleRabbit1.increaseAge();
-        femaleRabbit.increaseAge();
-        femaleRabbit1.increaseAge();
-    }
+            maleRabbit.increaseAge();
+            maleRabbit1.increaseAge();
+            femaleRabbit.increaseAge();
+            femaleRabbit1.increaseAge();
+        }
         Field.addRabbit(maleRabbit);
         Field.addRabbit(maleRabbit1);
         Field.addRabbit(femaleRabbit);
@@ -73,16 +74,12 @@ public class FieldTest {
 
         Field.breed();
 
-    assertNotEquals("pregnant", maleRabbit.getState());
-    assertNotEquals("pregnant", maleRabbit.getState());
-    assertEquals("pregnant", femaleRabbit.getState());
-    assertEquals("pregnant", femaleRabbit1.getState());
-    assertEquals("pregnant", femaleRabbit1.getState());
-    assertEquals("pregnant", femaleRabbit1.getState());
-    assertEquals("pregnant", femaleRabbit1.getState());
-    assertEquals("pregnant", femaleRabbit1.getState());
+        assertFalse(maleRabbit.isPregnant());
+        assertFalse(maleRabbit1.isPregnant());
+        assertTrue(femaleRabbit.isPregnant());
+        assertTrue(femaleRabbit1.isPregnant());
 
-}
+    }
 
     @Test
     public void testThatNewRabbitsAreAddedToRabbitArray () {

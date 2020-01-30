@@ -4,24 +4,22 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Fox {
-    private int foxAge;
-    private String foxGender;
-    private String foxState;
-    private boolean foxIsAvailable;
 
-    public boolean isFoxIsAvailable() {
-        return foxIsAvailable;
+    private int age;
+    private String gender;
+    private boolean isPregnant;
+
+    public boolean isPregnant() {
+        return isPregnant;
     }
 
-    public void setFoxIsAvailable(boolean foxIsAvailable) {
-        this.foxIsAvailable = foxIsAvailable;
+    public void setPregnant(boolean pregnant) {
+        isPregnant = pregnant;
     }
 
     public Fox() {
-        foxAge = 0;
-        foxGender = offSpringGender();
-        foxState = "young";
-
+        age = 0;
+        gender = offSpringGender();
     }
 
     //Only use it for testing!
@@ -33,37 +31,27 @@ public class Fox {
         return foxGender;
     }
 
-    public void setFoxState(String foxState) {
-        this.foxState = foxState;
-    }
-
-    public String getFoxState() {
-        return foxState;
-    }
-
-    public int getFoxAge() {
-        return foxAge;
+    public int getAge() {
+        return age;
     }
 
     public void increaseAge() {
-        foxAge++;
-        if (foxAge == 10) {
-            setFoxState("adult");
-            //setAvailable(true);
-            if (foxGender.equals("male")) {
-                Field.addMale(this); //change this - well it should work after field class is done
+        age++;
+        if (age == 10) {
+            if (gender.equals("male")) {
+                FoxField.addMale(this);
             } else {
-                Field.addFemale(this); //change this - well it should work after field class is done
+                FoxField.addFemale(this);
             }
-        } else if (foxAge == 60) {
-            setFoxState("dead");
-          //  FoxCounter.deadCounterIncrease(); //dont need this
-            if(foxGender.equals("male")) {
-                FoxCounter.decreaseAliveFoxCounterMale();
+        } else if (age == 60) {
+            //FoxCounter.deadCounterIncrease();
+            if(gender.equals("male")) {
+                //FoxCounter.decreaseAliveFoxCounterMale();
+                FoxField.getAvailableMaleFoxes().remove(this);
             } else {
-                FoxCounter.decreaseAliveFoxCounterFemale();
+                //FoxCounter.decreaseAliveFoxCounterFemale();
+                FoxField.getAvailableFemaleFoxes().remove(this);
             }
-            setFoxIsAvailable(false);
         }
     }
 
@@ -80,33 +68,25 @@ public class Fox {
     }
 
     public void getPregnant() {
-        if (foxGender.equals("female")) {
-            foxState = "pregnant";
+        if (gender.equals("female")) {
+            isPregnant = true;
         }
-        setFoxIsAvailable(false);
     }
 
     public ArrayList<Fox> giveBirth() {
-        ArrayList<Fox> arrayOfFox = new ArrayList<>();
-        if (foxState.equals("pregnant")) {
+        ArrayList<Fox> arrayOfFoxes = new ArrayList<>();
+        if (isPregnant) {
             Random random = new Random();
             int randomNumber = 0;
             while (randomNumber == 0) {
                 randomNumber = random.nextInt(11);
             }
-
             for (int i = randomNumber; i > 0; i--) {
-                arrayOfFox.add(new Fox());
+                arrayOfFoxes.add(new Fox());
             }
-            foxState = "adult";
-            setFoxIsAvailable(true);
-
-        } else if (getFoxState().equals("adult")){
-            setFoxIsAvailable(true);
+            isPregnant = false;
         }
-        return arrayOfFox;
+        return arrayOfFoxes;
     }
-
-
 }
 

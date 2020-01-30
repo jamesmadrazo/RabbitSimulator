@@ -7,7 +7,7 @@ import java.util.TimerTask;
 public class TimeSimulator {
     int count = 0;
 
-    ArrayList<Rabbit> toAdd = new ArrayList();
+    ArrayList<Rabbit> toAdd = new ArrayList<>();
 
     public void addRabbit(Rabbit rabbit) {
         toAdd.add(rabbit);

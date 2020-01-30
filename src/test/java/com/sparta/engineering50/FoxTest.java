@@ -4,8 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class FoxTest {
     Fox fox = new Fox();
@@ -16,8 +15,16 @@ public class FoxTest {
     }
 
     @Test
-    public void stateShouldBeYoung() {
-        assertEquals("young", fox.getFoxState());
+    public void newFoxShouldNotBeInAvailableFoxesBecauseYoung() {
+        boolean found = false;
+        fox.setGender("female");
+        for (Fox foxFieldRabbit:FoxField.getAvailableFemaleFoxes()){
+            if (fox == foxFieldRabbit) {
+                found = true;
+                break;
+            }
+        }
+        assertFalse(found);
     }
 
     @Test
@@ -25,7 +32,7 @@ public class FoxTest {
         String[] genders = new String[]{"male", "female"};
         boolean isGender = false;
         for (String s : genders) {
-            if (s.equals(fox.getFoxGender())) {
+            if (s.equals(fox.getGender())) {
                 isGender = true;
                 break;
             }
@@ -34,59 +41,80 @@ public class FoxTest {
     }
 
     @Test
-    public void stateShouldChangeToAdultAfterTenMonths() {
-        Fox fox = new Fox();
+
+    public void adultFoxShouldNotBeInAvailableFoxesBecauseAvailable() {
+        boolean found = false;
+        fox.setGender("female");
         for (int i = 0; i <= 10; i++) {
             fox.increaseAge();
         }
-        assertEquals("adult", fox.getFoxState());
+        for (Fox foxFieldRabbit:FoxField.getAvailableFemaleFoxes()){
+            if (fox == foxFieldRabbit) {
+                found = true;
+                break;
+            }
+        }
+        assertTrue(found);
     }
 
     @Test
-    public void testIfFoxDiedAfter60Months() {
-        Fox fox = new Fox();
-        for (int i = 0; i <= 60; i++) {
-            fox.increaseAge();
+    public void oldFoxShouldNotBeInAvailableFoxesBecauseDead() {
+        boolean found = false;
+        fox.setGender("female");
+        for (Fox foxFieldRabbit:FoxField.getAvailableFemaleFoxes()){
+            if (fox == foxFieldRabbit) {
+                found = true;
+                break;
+            }
         }
-        assertEquals("dead", fox.getFoxState());
+        assertFalse(found);
     }
 
-    //this is not accounting for fox being adult yet, as fox are not aged yet
-    //we will account for only adult getting pregnant in breeding
+    //this is not accounting for rabbits being adult yet, as rabbits are not aged yet
     @Test
     public void testIfFemaleFoxGotPregnant() {
         Fox fox = new Fox();
-        fox.setFoxGender("female");
+        fox.setGender("female");
         fox.getPregnant();
-        assertEquals("pregnant", fox.getFoxState());
+        assertTrue(fox.isPregnant());
     }
 
     @Test
     public void testIfMaleFoxGotPregnant() {
         Fox fox = new Fox();
-        fox.setFoxGender("male");
+        fox.setGender("male");
         for (int i = 0; i <= 10; i++) {
             fox.increaseAge();
         }
         fox.getPregnant();
-        assertEquals("adult", fox.getFoxState());
+        assertFalse(fox.isPregnant());
     }
 
     @Test
-    public void testIfFemaleFoxGaveBirthItIsAdultAfterward() {
+    public void testIfFemaleFoxGaveBirthItIsAvailableAfterward() {
         Fox fox = new Fox();
-        fox.setFoxGender("female");
+        fox.setGender("female");
+        for (int i = 0; i <= 10; i++) {
+            fox.increaseAge();
+        }
         fox.getPregnant();
         fox.giveBirth();
-        assertEquals("adult", fox.getFoxState());
+        boolean found = false;
+        for (Fox foxFieldRabbit:FoxField.getAvailableFemaleFoxes()){
+            if (fox == foxFieldRabbit) {
+                found = true;
+                break;
+            }
+        }
+        assertTrue(found);
     }
 
     @Test
     public void testThatFoxGivesBirth() {
         Fox fox = new Fox();
-        fox.setFoxState("pregnant");
-        ArrayList<Fox> arrayOfFox = new ArrayList<>();
-        arrayOfFox = fox.giveBirth();
-        assertTrue(arrayOfFox.size() > 0);
+        fox.setPregnant(true);
+        ArrayList<Fox> arrayOfFoxes = new ArrayList<>();
+        arrayOfFoxes = fox.giveBirth();
+        assertTrue(arrayOfFoxes.size() > 0);
     }
 }
