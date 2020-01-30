@@ -21,6 +21,16 @@ public class Rabbit {
         gender = offSpringGender();
     }
 
+    public Rabbit(String gender) {
+        age = 0;
+        this.gender = gender;
+        if (gender.equals("male")) {
+            RabbitCounter.increaseMaleCounter();
+        } else {
+            RabbitCounter.increaseFemaleCounter();
+        }
+    }
+
     //Only use it for testing!
     public void setGender(String gender) {
         this.gender = gender;

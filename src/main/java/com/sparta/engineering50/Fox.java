@@ -22,6 +22,16 @@ public class Fox {
         gender = offSpringGender();
     }
 
+    public Fox(String gender) {
+        age = 0;
+        this.gender = gender;
+        if (gender.equals("male")) {
+            FoxCounter.increaseMaleCounter();
+        } else {
+            FoxCounter.increaseFemaleCounter();
+        }
+    }
+
     //Only use it for testing!
     public void setGender(String foxGender) {
         this.gender = foxGender;

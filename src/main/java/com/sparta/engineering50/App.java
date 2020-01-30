@@ -6,23 +6,16 @@ public class App {
         System.out.println("Enter number of months");
         UserInput.getUserInput();
         TimeSimulator timeSimulator = new TimeSimulator();
-        Rabbit maleRabbit = new Rabbit();
-        maleRabbit.setGender("male");
-        Rabbit femaleRabbit = new Rabbit();
-        femaleRabbit.setGender("female");
+        Rabbit maleRabbit = new Rabbit("male");
+        Rabbit femaleRabbit = new Rabbit("female");
         Field.addRabbit(maleRabbit);
         Field.addRabbit(femaleRabbit);
 
-        Fox maleFox = new Fox();
-        maleFox.setGender("male");
-        //FoxCounter.increaseMaleCounter();
-        Fox femaleFox = new Fox();
-        femaleRabbit.setGender("female");
-       // FoxCounter.increaseFemaleCounter(); //
+        Fox maleFox = new Fox("male");
+        Fox femaleFox = new Fox("female");
         FoxField.addFox(maleFox);
         FoxField.addFox(femaleFox);
         timeSimulator.initialiseTimeSimulator(UserInput.getUserI());
-        //Thread.currentThread().join(10000);
     }
 
 
