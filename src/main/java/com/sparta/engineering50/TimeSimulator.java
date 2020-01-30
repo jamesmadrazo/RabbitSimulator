@@ -7,15 +7,26 @@ import java.util.TimerTask;
 public class TimeSimulator {
     int count = 0;
 
-    ArrayList<Rabbit> toAdd = new ArrayList<>();
+    ArrayList<Rabbit> rabbitsToAdd = new ArrayList<>();
+    ArrayList<Fox> foxesToAdd = new ArrayList<>();
 
     public void addRabbit(Rabbit rabbit) {
-        toAdd.add(rabbit);
+        rabbitsToAdd.add(rabbit);
     }
 
     public void addRabbits(ArrayList<Rabbit> rabbitArray) {
         for (Rabbit rabbit : rabbitArray) {
             addRabbit(rabbit);
+        }
+    }
+
+    public void addFox(Fox fox) {
+        foxesToAdd.add(fox);
+    }
+
+    public void addFoxes(ArrayList<Fox> foxArray) {
+        for (Fox fox : foxArray) {
+            addFox(fox);
         }
     }
 
@@ -30,14 +41,29 @@ public class TimeSimulator {
                         rabbit.increaseAge();
                         addRabbits(rabbit.giveBirth());
                     }
-                    Field.addRabbits(toAdd); // double adding??
-                    toAdd.clear();
+                    Field.addRabbits(rabbitsToAdd); // double adding??
+                    rabbitsToAdd.clear();
+                    for (Fox fox: FoxField.getFoxes()) {
+                        fox.increaseAge();
+                        addFoxes(fox.giveBirth());
+                    }
+                    FoxField.addFoxes(foxesToAdd);
+                    foxesToAdd.clear();
                     //System.out.println(Field.getRabbits().size());
                     Field.breed();
 
 
                 }
                 System.out.println("Month: " + count + " Rabbits: " + RabbitCounter.getTotalRabbits() + " Foxes: " + (FoxCounter.getFemaleFoxCounter()+FoxCounter.getMaleFoxCounter())); // Can be removed later
+                    if (count % 12 == 0) {
+                        FoxField.breed();
+                    }
+                    int NumberOfRabbits = RabbitCounter.getMaleRabbitCounter()+RabbitCounter.getFemaleRabbitCounter();
+                    System.out.println("Month: " + count + " Rabbits: " + NumberOfRabbits + " Foxes: " + FoxField.getFoxes().size()); // Can be removed later
+                    System.out.println();
+                    FoxField.hunt();
+                }
+
                 if (count >= seconds) {
                     timer.cancel();
                     timer.purge();

@@ -49,4 +49,29 @@ public class FoxField {
             }
         }
     }
+
+    public static int randomNumberOfPrey(){
+        Random random = new Random();
+        int totalSum = 0;
+        for(int i = 0; i < FoxField.getFoxes().size(); i++){
+            totalSum+= random.nextInt(21);
+        }
+        return totalSum;
+    }
+
+    public static void hunt() {
+        Random random = new Random();
+        int numberOfPrey = randomNumberOfPrey();
+        int position;
+        if (numberOfPrey > Field.getRabbits().size()){
+            numberOfPrey = Field.getRabbits().size();
+            position = 0;
+        } else {
+            position = random.nextInt(Field.getRabbits().size()-numberOfPrey);
+        }
+        for (int i = position; i < position + numberOfPrey ; i++){
+            Field.getRabbits().get(position).die();
+        }
+
+    }
 }
