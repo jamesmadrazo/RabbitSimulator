@@ -13,5 +13,3 @@ public class App {
         Field.addRabbit(femaleRabbit);
         timeSimulator.initialiseTimeSimulator(UserInput.getUserI());
         //Thread.currentThread().join(10000);
-
-    }}
