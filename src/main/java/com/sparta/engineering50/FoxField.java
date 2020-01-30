@@ -51,8 +51,18 @@ public class FoxField {
         }
     }
 
-    public static void hunt(int numberOfPrey) {
+    public static int randomNumberOfPrey(){
         Random random = new Random();
+        int totalSum = 0;
+        for(int i = 0; i < FoxField.getFoxes().size(); i++){
+            totalSum+= random.nextInt(21);
+        }
+        return totalSum;
+    }
+
+    public static void hunt() {
+        Random random = new Random();
+        int numberOfPrey = randomNumberOfPrey();
         int position;
         if (numberOfPrey > Field.getRabbits().size()){
             numberOfPrey = Field.getRabbits().size();
@@ -60,13 +70,9 @@ public class FoxField {
         } else {
             position = random.nextInt(Field.getRabbits().size()-numberOfPrey);
         }
-        //int position = 0;
-        //Field.getRabbits().subList(position, position + numberOfPrey).clear();
         for (int i = position; i < position + numberOfPrey ; i++){
             Field.getRabbits().get(position).die();
         }
-        System.out.println(Field.getRabbits().toString());
-        System.out.println(Field.getRabbits().size());
 
     }
 }

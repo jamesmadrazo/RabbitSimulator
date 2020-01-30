@@ -35,6 +35,19 @@ public class Fox {
         return age;
     }
 
+    public void die(){
+        //FoxCounter.deadCounterIncrease(); uncomment once dead counter is implemented for foxes
+        if(gender.equals("male")) {
+            FoxCounter.decreaseAliveFoxCounterMale();
+            FoxField.getAvailableMaleFoxes().remove(this);
+        } else {
+            FoxCounter.decreaseAliveFoxCounterFemale();
+            FoxField.getAvailableFemaleFoxes().remove(this);
+        }
+        FoxField.getFoxes().remove(this);
+    }
+
+
     public void increaseAge() {
         age++;
         if (age == 10) {
@@ -44,15 +57,9 @@ public class Fox {
                 FoxField.addFemale(this);
             }
         } else if (age == 60) {
-            //FoxCounter.deadCounterIncrease();
-            if(gender.equals("male")) {
-                //FoxCounter.decreaseAliveFoxCounterMale();
-                FoxField.getAvailableMaleFoxes().remove(this);
-            } else {
-                //FoxCounter.decreaseAliveFoxCounterFemale();
-                FoxField.getAvailableFemaleFoxes().remove(this);
-            }
+            die();
         }
+
     }
 
     private String offSpringGender() {
