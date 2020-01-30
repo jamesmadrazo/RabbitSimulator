@@ -248,8 +248,16 @@ Review:
 
 * Counters are done
 
-## Sprint 5 (4.15pm - ???)
+## Sprint 5 (4.15pm - 5.15pm)
 
-* Add more tests for the hunting method
+* Test the counters and fully implement them (Conor, Tyler, Emese, Thanu, James)
 
-* Test the counters and fully implement them
+* Continue JDBC implementation (Jack)
+
+Review:
+
+* Counters now implemented (fixed bug where manually set genders didn't go onto the counters, now will need to adjust the tests potentially)
+
+* Database seems to be going okay but won't know until we attempt implementation
+
+* There was a bug in the fox hunting but only happened once and hard to find - so will look into it
