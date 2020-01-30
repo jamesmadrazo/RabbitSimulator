@@ -44,9 +44,7 @@ public class FoxField {
         loopLength = Math.min(availableMaleFoxes.size(), availableFemaleFoxes.size());
         for (int i = 0; i < loopLength; i++) {
             availableMaleFoxes.get(i).getPregnant();
-            if (random.nextBoolean()) {
-                availableFemaleFoxes.get(i).getPregnant();
-            }
+            availableFemaleFoxes.get(i).getPregnant();
         }
     }
 
