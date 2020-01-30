@@ -1,7 +1,9 @@
 package com.sparta.engineering50;
 
 public class App {
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
+        System.out.println("Enter number of months");
+        UserInput.getUserInput();
         TimeSimulator timeSimulator = new TimeSimulator();
         Rabbit maleRabbit = new Rabbit();
         maleRabbit.setGender("male");
@@ -9,9 +11,5 @@ public class App {
         femaleRabbit.setGender("female");
         Field.addRabbit(maleRabbit);
         Field.addRabbit(femaleRabbit);
-        timeSimulator.initialiseTimeSimulator(20);
-        Thread.currentThread().join(20000);
-        System.out.println(Field.getAvailableMaleRabbits().size());
-        System.out.println(Field.getAvailableFemaleRabbits().size());
-    }
-}
+        timeSimulator.initialiseTimeSimulator(UserInput.getUserI());
+        //Thread.currentThread().join(10000);
