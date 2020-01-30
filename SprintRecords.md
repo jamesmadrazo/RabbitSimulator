@@ -224,10 +224,21 @@ Review:
 
 * Jack has done the start of the JDBC implementation, slight issue but confident knows a fix.
 
-## Sprint 3 (1.30pm - 3pm(?))
+## Sprint 3 (1.30pm - 3pm)
 
 * Work on killing method (Conor, Tyler and Emese)
 
 * Continue JDBC implementation (Jack)
 
-* TBC (Thanu and James)
+Review:
+
+* Killing method #2 done (killing the rabbits), still doing #1 (determining how many to kill) in next sprint
+
+## Sprint 4 (3pm - 4.15pm)
+
+* Finish the killing method and merge and then make sure it's implemented (Tyler, Conor and Emese)
+
+* Work on user output implementation (adding foxes and dead things) (James and Thanu)
+
+* Continue JDBC implementation (Jack)
+
