@@ -42,29 +42,11 @@ public class Field {
         Random random = new Random();
         int loopLength = 0;
         loopLength = Math.min(availableMales.size(), availableFemales.size());
-        for (int i = 0; i < loopLength ; i++) {
+        for (int i = 0; i < loopLength; i++) {
             availableMales.get(i).getPregnant();
             if (random.nextBoolean()) {
                 availableFemales.get(i).getPregnant();
             }
         }
     }
-
-//    public static void breed() {
-//        int rabbitCounter = 0;
-//        while (rabbitCounter < rabbits.size())
-//            for (Rabbit rabbit : rabbits) {
-//                rabbitCounter++;
-//                if (rabbit.isAvailable() && rabbit.getGender().equals("male")) {
-//                    for (Rabbit rabbit1 : rabbits) {
-//                        if (rabbit1.isAvailable() && rabbit1.getGender().equals("female")) {
-//                            rabbit1.getPregnant();
-//                            rabbit.setAvailable(false);
-//                            rabbitCounter = 0;
-//                            break;
-//                        }
-//                    }
-//                }
-//            }
-//    }
 }
