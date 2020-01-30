@@ -119,5 +119,75 @@ Review:
 
 * Team happy with how spring went and was able to get a lot done within the hour. 
 
+## Wednesday Morning - Scrum Master: Conor
+
+## Sprint 09:20-09:40
+
+Goals: 
+
+* Making sure everyone is on the same page
+
+Sprint: 
+
+* going through what was added late on Tuesday night (Everyone)
+
+
+Review: 
+
+* Team happy with where the project is currently
+
+## Sprint (45 Minutes)
+
+Goals: 
+
+* Making the CheckTimerRuns test bug is squashed
+
+* Making the 'Rabbits Breeding before they are mature' bug is also dealt with
+
+Sprint: 
+
+* CheckTimerRuns test (Tyler and Conor)
+
+* Rabbits breeding in the second month bug (Emese and Jack)
+
+* Implementing the Female Rabbits having a 50% chance of getting pregnant (Thanu and James)
+
+* Implementing a cooldown for the Male Rabbits (Tyler and Conor)
+
+
+Review: 
+
+* Team worked well in this sprint we accomplished the sprint goals
+
+* We talked at the end of the sprint about the male allocation and decided that what we had initially done it the right way, so we will be reverting the male allocation change
+
+
+## Sprint (1 hour 15 Minutes)
+
+Goals: 
+
+* Implementing the counters
+
+* Squashing the 50% pregnant bug
+
+Sprint: 
+
+* Squashing the 50% pregnant bug (Thanu, James and Tyler)
+
+* Refactoring the breeding method (Emese and Jack)
+
+* Implementing the actual counters (Tyler and Conor)
+
+* Started looking at strenuous testing of the program (Tyler and Conor)
+
+
+Review: 
+
+* Team worked hard in this sprint but we were unable to fully complete the refactoring sprint goal and also the 50% pregnant bug still exists
+
+* The uncompleted tasks will roll over into the afternoon.
+
+* We also tested the program to see where the limit is, and we got to about 32 months before the program runs out of memory space
+
 
 
