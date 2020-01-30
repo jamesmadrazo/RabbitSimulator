@@ -3,25 +3,22 @@ package com.sparta.engineering50;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class Rabbit {
+public class Fox {
     private int age;
     private String gender;
-    private String state;
-    private boolean isAvailable;
+    private boolean isPregnant;
 
-    public boolean isAvailable() {
-        return isAvailable;
+    public boolean isPregnant() {
+        return isPregnant;
     }
 
-    public void setAvailable(boolean available) {
-        isAvailable = available;
+    public void setPregnant(boolean pregnant) {
+        isPregnant = pregnant;
     }
 
-    public Rabbit() {
+    public Fox() {
         age = 0;
         gender = offSpringGender();
-        state = "young";
-
     }
 
     //Only use it for testing!
@@ -33,38 +30,27 @@ public class Rabbit {
         return gender;
     }
 
-
-    public void setState(String state) {
-        this.state = state;
-    }
-
-    public String getState() {
-        return state;
-    }
-
     public int getAge() {
         return age;
     }
 
     public void increaseAge() {
         age++;
-        if (age == 3) {
-            setState("adult");
-            //setAvailable(true);
+        if (age == 10) {
             if (gender.equals("male")) {
-                Field.addMale(this);
+                FoxField.addMale(this);
             } else {
-                Field.addFemale(this);
+                FoxField.addFemale(this);
             }
         } else if (age == 60) {
-            setState("dead");
-            RabbitCounter.deadCounterIncrease();
+            FoxCounter.deadCounterIncrease();
             if(gender.equals("male")) {
-                RabbitCounter.decreaseAliveRabbitCounterMale();
+                FoxCounter.decreaseAliveFoxCounterMale();
+                FoxField.getAvailableMaleFoxes().remove(this);
             } else {
-                RabbitCounter.decreaseAliveRabbitCounterFemale();
+                FoxCounter.decreaseAliveFoxCounterFemale();
+                FoxField.getAvailableFemaleFoxes().remove(this);
             }
-            setAvailable(false);
         }
     }
 
@@ -82,32 +68,24 @@ public class Rabbit {
 
     public void getPregnant() {
         if (gender.equals("female")) {
-            state = "pregnant";
+            isPregnant = true;
         }
-        setAvailable(false);
     }
 
-    public ArrayList<Rabbit> giveBirth() {
-        ArrayList<Rabbit> arrayOfRabbits = new ArrayList<>();
-        if (state.equals("pregnant")) {
+    public ArrayList<Fox> giveBirth() {
+        ArrayList<Fox> arrayOfFoxes = new ArrayList<>();
+        if (isPregnant) {
             Random random = new Random();
             int randomNumber = 0;
             while (randomNumber == 0) {
-                randomNumber = random.nextInt(15);
+                randomNumber = random.nextInt(11);
             }
-
             for (int i = randomNumber; i > 0; i--) {
-                arrayOfRabbits.add(new Rabbit());
+                arrayOfFoxes.add(new Fox());
             }
-            state = "adult";
-            setAvailable(true);
-
-        } else if (getState().equals("adult")){
-            setAvailable(true);
+            isPregnant = false;
         }
-        return arrayOfRabbits;
+        return arrayOfFoxes;
     }
-
-
 }
 
