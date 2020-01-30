@@ -189,5 +189,15 @@ Review:
 
 * We also tested the program to see where the limit is, and we got to about 32 months before the program runs out of memory space
 
+## Thursday Morning - Scrum Master: Tyler
+## Sprint 1 - (11am - 12.30pm)
+
+* Add fox class, similar to rabbit class (James and Thanu)
+
+* Add a fox field, similar to the field for rabbits (Tyler and Emese)
+
+* Investigate whether/how we can implement JDBC/Database into the program (Jack)
+
+* Start working on the killing method/implementation (Conor)
 
 
