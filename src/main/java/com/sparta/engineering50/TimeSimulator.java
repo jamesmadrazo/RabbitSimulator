@@ -34,8 +34,14 @@ public class TimeSimulator {
                     toAdd.clear();
                     //System.out.println(Field.getRabbits().size());
                     Field.breed();
+                    int NumberOfRabbits = RabbitCounter.getMaleRabbitCounter()+RabbitCounter.getFemaleRabbitCounter();
+                    System.out.println("Month: " + count + " Rabbits: " + NumberOfRabbits); // Can be removed later
+                    if(count == 10){
+                        FoxField.hunt(4);
+                    }
+                    System.out.println(RabbitCounter.getDeadCounter());
                 }
-                System.out.println("Month: " + count + " Rabbits: " + RabbitCounter.getTotalRabbits()); // Can be removed later
+
                 if (count >= seconds) {
                     timer.cancel();
                     timer.purge();

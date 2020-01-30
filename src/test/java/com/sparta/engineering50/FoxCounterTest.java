@@ -14,8 +14,8 @@ public class FoxCounterTest {
         femaleFox.setGender("female");
         FoxField.addFox(maleFox); //change this - well it should work after field class is done
         FoxField.addFox(femaleFox); //change this - well it should work after field class is done
-        timeSimulator.initialiseTimeSimulator(300);
-        Thread.currentThread().join();
+        timeSimulator.initialiseTimeSimulator(10);
+        Thread.currentThread().join(10000);
         assertEquals(FoxField.getFoxes().size(),(FoxCounter.getFemaleFoxCounter()+FoxCounter.getMaleFoxCounter())); //change this - well it should work after field class is done
     }
 }

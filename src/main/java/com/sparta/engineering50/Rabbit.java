@@ -34,6 +34,19 @@ public class Rabbit {
         return age;
     }
 
+    public void die(){
+        RabbitCounter.deadCounterIncrease();
+        if(gender.equals("male")) {
+            RabbitCounter.decreaseAliveRabbitCounterMale();
+            Field.getAvailableMaleRabbits().remove(this);
+        } else {
+            RabbitCounter.decreaseAliveRabbitCounterFemale();
+            Field.getAvailableFemaleRabbits().remove(this);
+        }
+        Field.getRabbits().remove(this);
+    }
+
+
     public void increaseAge() {
         age++;
         if (age == 3) {
@@ -43,15 +56,9 @@ public class Rabbit {
                 Field.addFemale(this);
             }
         } else if (age == 60) {
-            RabbitCounter.deadCounterIncrease();
-            if(gender.equals("male")) {
-                RabbitCounter.decreaseAliveRabbitCounterMale();
-                Field.getAvailableMaleRabbits().remove(this);
-            } else {
-                RabbitCounter.decreaseAliveRabbitCounterFemale();
-                Field.getAvailableFemaleRabbits().remove(this);
-            }
+            die();
         }
+
     }
 
     private String offSpringGender() {

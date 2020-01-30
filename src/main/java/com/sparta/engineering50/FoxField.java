@@ -1,6 +1,7 @@
 package com.sparta.engineering50;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Random;
 
 public class FoxField {
@@ -48,5 +49,24 @@ public class FoxField {
                 availableFemaleFoxes.get(i).getPregnant();
             }
         }
+    }
+
+    public static void hunt(int numberOfPrey) {
+        Random random = new Random();
+        int position;
+        if (numberOfPrey > Field.getRabbits().size()){
+            numberOfPrey = Field.getRabbits().size();
+            position = 0;
+        } else {
+            position = random.nextInt(Field.getRabbits().size()-numberOfPrey);
+        }
+        //int position = 0;
+        //Field.getRabbits().subList(position, position + numberOfPrey).clear();
+        for (int i = position; i < position + numberOfPrey ; i++){
+            Field.getRabbits().get(position).die();
+        }
+        System.out.println(Field.getRabbits().toString());
+        System.out.println(Field.getRabbits().size());
+
     }
 }
