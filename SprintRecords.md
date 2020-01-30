@@ -220,6 +220,14 @@ Review:
 
 Review:
 
-* All tasks done other than killing method as this was more complicated than expected, so splitting it between three next sprint
+* All tasks done other than killing method as this was more complicated than expected, so splitting it between three next sprint.
+
+* Jack has done the start of the JDBC implementation, slight issue but confident knows a fix.
 
 ## Sprint 3 (1.30pm - 3pm(?))
+
+* Work on killing method (Conor, Tyler and Emese)
+
+* Continue JDBC implementation (Jack)
+
+* TBC (Thanu and James)
