@@ -1,7 +1,6 @@
 package com.sparta.engineering50;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Random;
 
 public class FoxField {
