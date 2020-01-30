@@ -11,7 +11,7 @@ public class App {
         Field.addRabbit(femaleRabbit);
         timeSimulator.initialiseTimeSimulator(20);
         Thread.currentThread().join(20000);
-        System.out.println(Field.getAvailableMales().size());
-        System.out.println(Field.getAvailableFemales().size());
+        System.out.println(Field.getAvailableMaleRabbits().size());
+        System.out.println(Field.getAvailableFemaleRabbits().size());
     }
 }

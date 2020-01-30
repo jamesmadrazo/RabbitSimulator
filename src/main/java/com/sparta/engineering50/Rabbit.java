@@ -45,15 +45,15 @@ public class Rabbit {
             } else {
                 Field.addFemale(this);
             }
-        } else if (age == 10) {
+        } else if (age == 60) {
             setState("dead");
             RabbitCounter.deadCounterIncrease();
             if(gender.equals("male")) {
                 RabbitCounter.decreaseAliveRabbitCounterMale();
-                Field.getAvailableMales().remove(this);
+                Field.getAvailableMaleRabbits().remove(this);
             } else {
                 RabbitCounter.decreaseAliveRabbitCounterFemale();
-                Field.getAvailableFemales().remove(this);
+                Field.getAvailableFemaleRabbits().remove(this);
             }
         }
     }
