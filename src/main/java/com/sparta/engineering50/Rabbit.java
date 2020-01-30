@@ -7,21 +7,12 @@ public class Rabbit {
     private int age;
     private String gender;
     private String state;
-    private boolean isAvailable;
 
-    public boolean isAvailable() {
-        return isAvailable;
-    }
-
-    public void setAvailable(boolean available) {
-        isAvailable = available;
-    }
 
     public Rabbit() {
         age = 0;
         gender = offSpringGender();
         state = "young";
-
     }
 
     //Only use it for testing!
@@ -32,7 +23,6 @@ public class Rabbit {
     public String getGender() {
         return gender;
     }
-
 
     public void setState(String state) {
         this.state = state;
@@ -50,7 +40,6 @@ public class Rabbit {
         age++;
         if (age == 3) {
             setState("adult");
-            //setAvailable(true);
             if (gender.equals("male")) {
                 Field.addMale(this);
             } else {
@@ -61,10 +50,11 @@ public class Rabbit {
             RabbitCounter.deadCounterIncrease();
             if(gender.equals("male")) {
                 RabbitCounter.decreaseAliveRabbitCounterMale();
+                Field.getAvailableMaleRabbits().remove(this);
             } else {
                 RabbitCounter.decreaseAliveRabbitCounterFemale();
+                Field.getAvailableFemaleRabbits().remove(this);
             }
-            setAvailable(false);
         }
     }
 
@@ -84,7 +74,6 @@ public class Rabbit {
         if (gender.equals("female")) {
             state = "pregnant";
         }
-        setAvailable(false);
     }
 
     public ArrayList<Rabbit> giveBirth() {
@@ -95,19 +84,12 @@ public class Rabbit {
             while (randomNumber == 0) {
                 randomNumber = random.nextInt(15);
             }
-
             for (int i = randomNumber; i > 0; i--) {
                 arrayOfRabbits.add(new Rabbit());
             }
             state = "adult";
-            setAvailable(true);
-
-        } else if (getState().equals("adult")){
-            setAvailable(true);
         }
         return arrayOfRabbits;
     }
-
-
 }
 

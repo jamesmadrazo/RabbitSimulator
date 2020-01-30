@@ -9,9 +9,9 @@ public class App {
         femaleRabbit.setGender("female");
         Field.addRabbit(maleRabbit);
         Field.addRabbit(femaleRabbit);
-        timeSimulator.initialiseTimeSimulator(10);
-        Thread.currentThread().join(10000);
-        System.out.println(Field.getAvailableMales().size());
-        System.out.println(Field.getAvailableFemales().size());
+        timeSimulator.initialiseTimeSimulator(20);
+        Thread.currentThread().join(20000);
+        System.out.println(Field.getAvailableMaleRabbits().size());
+        System.out.println(Field.getAvailableFemaleRabbits().size());
     }
 }
