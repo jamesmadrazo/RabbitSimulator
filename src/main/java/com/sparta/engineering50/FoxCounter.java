@@ -1,45 +1,45 @@
 package com.sparta.engineering50;
 
-public class RabbitCounter {
+public class FoxCounter {
 
-    private static int aliveRabbitCounterFemale;
-    private static int aliveRabbitCounterMale;
-    private static int deadCounter;
+    private static int aliveFoxCounterFemale;
+    private static int aliveFoxCounterMale;
+    //private static int deadCounter;
 
     public static void increaseMaleCounter() {
-        aliveRabbitCounterMale++;
+        aliveFoxCounterMale++;
     }
 
-    public static void decreaseAliveRabbitCounterMale() {
-        aliveRabbitCounterMale--;
+    public static void decreaseAliveFoxCounterMale() {
+        aliveFoxCounterMale--;
     }
 
-    public static void decreaseAliveRabbitCounterFemale() {
-        aliveRabbitCounterFemale--;
+    public static void decreaseAliveFoxCounterFemale() {
+        aliveFoxCounterFemale--;
     }
 
     public static void increaseFemaleCounter() {
-        aliveRabbitCounterFemale++;
+        aliveFoxCounterFemale++;
     }
 
-    public static int getFemaleRabbitCounter() {
-        return aliveRabbitCounterFemale;
+    public static int getFemaleFoxCounter() {
+        return aliveFoxCounterFemale;
     }
 
-    public static int getMaleRabbitCounter() {
-        return aliveRabbitCounterMale;
+    public static int getMaleFoxCounter() {
+        return aliveFoxCounterMale;
     }
 
-    public static void deadCounterIncrease() {
-        deadCounter++;
-    }
+    //public static void deadCounterIncrease() {
+    //     deadCounter++;
+    // }
 
-    public static int getDeadCounter() {
+/*    public static int getDeadCounter() {
         return deadCounter;
-    }
+    }*/
 
-    public static int getTotalRabbits() {
-        return deadCounter+aliveRabbitCounterMale+aliveRabbitCounterFemale;
-    }
+    /// public static int getTotalRabbits() {
+    //  return deadCounter+aliveFoxCounterMale+ aliveFoxCounterFemale;
+    //}
 
 }

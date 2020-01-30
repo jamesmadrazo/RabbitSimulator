@@ -3,68 +3,67 @@ package com.sparta.engineering50;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class Rabbit {
-    private int age;
-    private String gender;
-    private String state;
-    private boolean isAvailable;
+public class Fox {
+    private int foxAge;
+    private String foxGender;
+    private String foxState;
+    private boolean foxIsAvailable;
 
-    public boolean isAvailable() {
-        return isAvailable;
+    public boolean isFoxIsAvailable() {
+        return foxIsAvailable;
     }
 
-    public void setAvailable(boolean available) {
-        isAvailable = available;
+    public void setFoxIsAvailable(boolean foxIsAvailable) {
+        this.foxIsAvailable = foxIsAvailable;
     }
 
-    public Rabbit() {
-        age = 0;
-        gender = offSpringGender();
-        state = "young";
+    public Fox() {
+        foxAge = 0;
+        foxGender = offSpringGender();
+        foxState = "young";
 
     }
 
     //Only use it for testing!
-    public void setGender(String gender) {
-        this.gender = gender;
+    public void setFoxGender(String foxGender) {
+        this.foxGender = foxGender;
     }
 
-    public String getGender() {
-        return gender;
+    public String getFoxGender() {
+        return foxGender;
     }
 
-
-    public void setState(String state) {
-        this.state = state;
+    public void setFoxState(String foxState) {
+        this.foxState = foxState;
     }
 
-    public String getState() {
-        return state;
+    public String getFoxState() {
+        return foxState;
     }
 
-    public int getAge() {
-        return age;
+    public int getFoxAge() {
+        return foxAge;
     }
 
     public void increaseAge() {
-        age++;
-        if (age == 3) {
-            setState("adult");
+        foxAge++;
+        if (foxAge == 10) {
+            setFoxState("adult");
             //setAvailable(true);
-            if (gender.equals("male")) {
-                Field.addMale(this);
+            if (foxGender.equals("male")) {
+                Field.addMale(this); //change this - well it should work after field class is done
             } else {
-                Field.addFemale(this);
+                Field.addFemale(this); //change this - well it should work after field class is done
             }
-        } else if (age == 60) {
-            setState("dead");
-            RabbitCounter.deadCounterIncrease();
-            if(gender.equals("male")) {
-                RabbitCounter.decreaseAliveRabbitCounterMale();
+        } else if (foxAge == 60) {
+            setFoxState("dead");
+          //  FoxCounter.deadCounterIncrease(); //dont need this
+            if(foxGender.equals("male")) {
+                FoxCounter.decreaseAliveFoxCounterMale();
             } else {
-                RabbitCounter.decreaseAliveRabbitCounterFemale();
+                FoxCounter.decreaseAliveFoxCounterFemale();
             }
-            setAvailable(false);
+            setFoxIsAvailable(false);
         }
     }
 
@@ -72,40 +71,40 @@ public class Rabbit {
         Random random = new Random();
         boolean result = random.nextBoolean();
         if (result) {
-            RabbitCounter.increaseMaleCounter();
+            FoxCounter.increaseMaleCounter();
             return "male";
         } else {
-            RabbitCounter.increaseFemaleCounter();
+            FoxCounter.increaseFemaleCounter();
             return "female";
         }
     }
 
     public void getPregnant() {
-        if (gender.equals("female")) {
-            state = "pregnant";
+        if (foxGender.equals("female")) {
+            foxState = "pregnant";
         }
-        setAvailable(false);
+        setFoxIsAvailable(false);
     }
 
-    public ArrayList<Rabbit> giveBirth() {
-        ArrayList<Rabbit> arrayOfRabbits = new ArrayList<>();
-        if (state.equals("pregnant")) {
+    public ArrayList<Fox> giveBirth() {
+        ArrayList<Fox> arrayOfFox = new ArrayList<>();
+        if (foxState.equals("pregnant")) {
             Random random = new Random();
             int randomNumber = 0;
             while (randomNumber == 0) {
-                randomNumber = random.nextInt(15);
+                randomNumber = random.nextInt(11);
             }
 
             for (int i = randomNumber; i > 0; i--) {
-                arrayOfRabbits.add(new Rabbit());
+                arrayOfFox.add(new Fox());
             }
-            state = "adult";
-            setAvailable(true);
+            foxState = "adult";
+            setFoxIsAvailable(true);
 
-        } else if (getState().equals("adult")){
-            setAvailable(true);
+        } else if (getFoxState().equals("adult")){
+            setFoxIsAvailable(true);
         }
-        return arrayOfRabbits;
+        return arrayOfFox;
     }
 
 

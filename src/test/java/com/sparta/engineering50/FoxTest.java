@@ -1,23 +1,23 @@
 package com.sparta.engineering50;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 
-public class RabbitTest {
-    Rabbit rabbit = new Rabbit();
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+public class FoxTest {
+    Fox fox = new Fox();
 
     @Test
     public void ageShouldBeZero() {
-        assertEquals(0, rabbit.getAge());
+        assertEquals(0, fox.getFoxAge());
     }
 
     @Test
     public void stateShouldBeYoung() {
-        assertEquals("young", rabbit.getState());
+        assertEquals("young", fox.getFoxState());
     }
 
     @Test
@@ -25,7 +25,7 @@ public class RabbitTest {
         String[] genders = new String[]{"male", "female"};
         boolean isGender = false;
         for (String s : genders) {
-            if (s.equals(rabbit.getGender())) {
+            if (s.equals(fox.getFoxGender())) {
                 isGender = true;
                 break;
             }
@@ -34,59 +34,59 @@ public class RabbitTest {
     }
 
     @Test
-    public void stateShouldChangeToAdultAfterThreeMonths() {
-        Rabbit rabbit = new Rabbit();
-        for (int i = 0; i <= 3; i++) {
-            rabbit.increaseAge();
+    public void stateShouldChangeToAdultAfterTenMonths() {
+        Fox fox = new Fox();
+        for (int i = 0; i <= 10; i++) {
+            fox.increaseAge();
         }
-        assertEquals("adult", rabbit.getState());
+        assertEquals("adult", fox.getFoxState());
     }
 
     @Test
-    public void testIfRabbitDiedAfter60Months() {
-        Rabbit rabbit = new Rabbit();
+    public void testIfFoxDiedAfter60Months() {
+        Fox fox = new Fox();
         for (int i = 0; i <= 60; i++) {
-            rabbit.increaseAge();
+            fox.increaseAge();
         }
-        assertEquals("dead", rabbit.getState());
+        assertEquals("dead", fox.getFoxState());
     }
 
-    //this is not accounting for rabbits being adult yet, as rabbits are not aged yet
+    //this is not accounting for fox being adult yet, as fox are not aged yet
     //we will account for only adult getting pregnant in breeding
     @Test
-    public void testIfFemaleRabbitGotPregnant() {
-        Rabbit rabbit = new Rabbit();
-        rabbit.setGender("female");
-        rabbit.getPregnant();
-        assertEquals("pregnant", rabbit.getState());
+    public void testIfFemaleFoxGotPregnant() {
+        Fox fox = new Fox();
+        fox.setFoxGender("female");
+        fox.getPregnant();
+        assertEquals("pregnant", fox.getFoxState());
     }
 
     @Test
-    public void testIfMaleRabbitGotPregnant() {
-        Rabbit rabbit = new Rabbit();
-        rabbit.setGender("male");
-        for (int i = 0; i <= 3; i++) {
-            rabbit.increaseAge();
+    public void testIfMaleFoxGotPregnant() {
+        Fox fox = new Fox();
+        fox.setFoxGender("male");
+        for (int i = 0; i <= 10; i++) {
+            fox.increaseAge();
         }
-        rabbit.getPregnant();
-        assertEquals("adult", rabbit.getState());
+        fox.getPregnant();
+        assertEquals("adult", fox.getFoxState());
     }
 
     @Test
-    public void testIfFemaleRabbitGaveBirthItIsAdultAfterward() {
-        Rabbit rabbit = new Rabbit();
-        rabbit.setGender("female");
-        rabbit.getPregnant();
-        rabbit.giveBirth();
-        assertEquals("adult", rabbit.getState());
+    public void testIfFemaleFoxGaveBirthItIsAdultAfterward() {
+        Fox fox = new Fox();
+        fox.setFoxGender("female");
+        fox.getPregnant();
+        fox.giveBirth();
+        assertEquals("adult", fox.getFoxState());
     }
 
     @Test
-    public void testThatRabbitGivesBirth() {
-        Rabbit rabbit = new Rabbit();
-        rabbit.setState("pregnant");
-        ArrayList<Rabbit> arrayOfRabbits = new ArrayList<>();
-        arrayOfRabbits = rabbit.giveBirth();
-        assertTrue(arrayOfRabbits.size() > 0);
+    public void testThatFoxGivesBirth() {
+        Fox fox = new Fox();
+        fox.setFoxState("pregnant");
+        ArrayList<Fox> arrayOfFox = new ArrayList<>();
+        arrayOfFox = fox.giveBirth();
+        assertTrue(arrayOfFox.size() > 0);
     }
 }

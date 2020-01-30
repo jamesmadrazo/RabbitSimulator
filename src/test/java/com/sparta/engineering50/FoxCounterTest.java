@@ -3,20 +3,19 @@ package com.sparta.engineering50;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class RabbitCounterTest {
+public class FoxCounterTest {
     @Test
-    void rabbitCountersShouldMatchNumberOfRabbits() throws InterruptedException {
+    void foxCountersShouldMatchNumberOfFox() throws InterruptedException {
         TimeSimulator timeSimulator = new TimeSimulator();
-        Rabbit maleRabbit = new Rabbit();
-        maleRabbit.setGender("male");
-        Rabbit femaleRabbit = new Rabbit();
-        femaleRabbit.setGender("female");
-        Field.addRabbit(maleRabbit);
-        Field.addRabbit(femaleRabbit);
+        Fox maleFox = new Fox();
+        maleFox.setFoxGender("male");
+        Fox femaleFox = new Fox();
+        femaleFox.setFoxGender("female");
+        Field.addFox(maleFox); //change this - well it should work after field class is done
+        Field.addFox(femaleFox); //change this - well it should work after field class is done
         timeSimulator.initialiseTimeSimulator(300);
         Thread.currentThread().join();
-        assertEquals(Field.getRabbits().size(),(RabbitCounter.getFemaleRabbitCounter()+RabbitCounter.getMaleRabbitCounter()+RabbitCounter.getDeadCounter()));
+        assertEquals(Field.getFox().size(),(FoxCounter.getFemaleFoxCounter()+FoxCounter.getMaleFoxCounter())); //change this - well it should work after field class is done
     }
 }
