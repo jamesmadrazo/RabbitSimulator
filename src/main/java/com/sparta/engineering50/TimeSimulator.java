@@ -51,6 +51,10 @@ public class TimeSimulator {
                     foxesToAdd.clear();
                     //System.out.println(Field.getRabbits().size());
                     Field.breed();
+
+
+                }
+                System.out.println("Month: " + count + " Rabbits: " + RabbitCounter.getTotalRabbits() + " Foxes: " + (FoxCounter.getFemaleFoxCounter()+FoxCounter.getMaleFoxCounter())); // Can be removed later
                     if (count % 12 == 0) {
                         FoxField.breed();
                     }
@@ -63,6 +67,11 @@ public class TimeSimulator {
                 if (count >= seconds) {
                     timer.cancel();
                     timer.purge();
+                    System.out.println("Number of male rabbits alive: " + RabbitCounter.getMaleRabbitCounter());
+                    System.out.println("Number of female rabbits alive: " + RabbitCounter.getFemaleRabbitCounter());
+                    System.out.println("Number of male foxes alive: " + FoxCounter.getMaleFoxCounter());
+                    System.out.println("Number of female foxes alive: " + FoxCounter.getFemaleFoxCounter());
+                    System.out.println("Number of rabbits that have died: " + RabbitCounter.getDeadCounter());
                 }
             }
 
@@ -70,6 +79,9 @@ public class TimeSimulator {
         };
 
         timer.scheduleAtFixedRate(timerTask, 0, 1000);
+
+
+
     }
 
     public int getCount() {
