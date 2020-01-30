@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Fox {
+
     private int age;
     private String gender;
     private boolean isPregnant;
@@ -22,12 +23,12 @@ public class Fox {
     }
 
     //Only use it for testing!
-    public void setGender(String gender) {
-        this.gender = gender;
+    public void setFoxGender(String foxGender) {
+        this.foxGender = foxGender;
     }
 
-    public String getGender() {
-        return gender;
+    public String getFoxGender() {
+        return foxGender;
     }
 
     public int getAge() {
@@ -58,10 +59,10 @@ public class Fox {
         Random random = new Random();
         boolean result = random.nextBoolean();
         if (result) {
-            RabbitCounter.increaseMaleCounter();
+            FoxCounter.increaseMaleCounter();
             return "male";
         } else {
-            RabbitCounter.increaseFemaleCounter();
+            FoxCounter.increaseFemaleCounter();
             return "female";
         }
     }

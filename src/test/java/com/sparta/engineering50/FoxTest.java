@@ -11,7 +11,7 @@ public class FoxTest {
 
     @Test
     public void ageShouldBeZero() {
-        assertEquals(0, fox.getAge());
+        assertEquals(0, fox.getFoxAge());
     }
 
     @Test
@@ -41,6 +41,7 @@ public class FoxTest {
     }
 
     @Test
+
     public void adultFoxShouldNotBeInAvailableFoxesBecauseAvailable() {
         boolean found = false;
         fox.setGender("female");
@@ -70,7 +71,6 @@ public class FoxTest {
     }
 
     //this is not accounting for rabbits being adult yet, as rabbits are not aged yet
-    //we will account for only adult getting pregnant in breeding
     @Test
     public void testIfFemaleFoxGotPregnant() {
         Fox fox = new Fox();
