@@ -15,8 +15,8 @@ public class RabbitCounterTest {
         femaleRabbit.setGender("female");
         Field.addRabbit(maleRabbit);
         Field.addRabbit(femaleRabbit);
-        timeSimulator.initialiseTimeSimulator(300);
-        Thread.currentThread().join();
+        timeSimulator.initialiseTimeSimulator(10);
+        Thread.currentThread().join(10000);
         assertEquals(Field.getRabbits().size(),(RabbitCounter.getFemaleRabbitCounter()+RabbitCounter.getMaleRabbitCounter()+RabbitCounter.getDeadCounter()));
     }
 }
