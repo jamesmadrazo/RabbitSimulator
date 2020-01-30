@@ -43,12 +43,12 @@ public class Fox {
                 FoxField.addFemale(this);
             }
         } else if (age == 60) {
-            FoxCounter.deadCounterIncrease();
+            //FoxCounter.deadCounterIncrease();
             if(gender.equals("male")) {
-                FoxCounter.decreaseAliveFoxCounterMale();
+                //FoxCounter.decreaseAliveFoxCounterMale();
                 FoxField.getAvailableMaleFoxes().remove(this);
             } else {
-                FoxCounter.decreaseAliveFoxCounterFemale();
+                //FoxCounter.decreaseAliveFoxCounterFemale();
                 FoxField.getAvailableFemaleFoxes().remove(this);
             }
         }
