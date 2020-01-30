@@ -242,3 +242,14 @@ Review:
 
 * Continue JDBC implementation (Jack)
 
+Review: 
+
+* Done the killing method, but now rabbits die immediately (whether that's intended or not)
+
+* Counters are done
+
+## Sprint 5 (4.15pm - ???)
+
+* Add more tests for the hunting method
+
+* Test the counters and fully implement them
