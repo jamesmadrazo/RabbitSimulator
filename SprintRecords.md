@@ -283,3 +283,21 @@ Review:
 * Database seems to be going okay but won't know until we attempt implementation
 
 * There was a bug in the fox hunting but only happened once and hard to find - so will look into it
+
+## Friday Morning - Scrum Master: Tyler
+
+## Spring 1 (9.30am - 10.30am)
+
+* Create an abstract class for Fox and Rabbit as Animal to cut repeated code (Thanu and Tyler)
+
+* Investigate how to measure code coverage and begin that (Conor)
+
+* Last attempt at making the database more efficient to use in the program (Jack)
+
+* Fix and expand the breeding tests (Emese)
+
+Review:
+
+* All done, although not sure whether database will be completed by the deadline
+
+* Need to correct bug in program where foxes are breeding beginning in month 12 and not month 10
