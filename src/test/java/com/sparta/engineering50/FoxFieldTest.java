@@ -93,8 +93,11 @@ public class FoxFieldTest {
 
     @Test
     public void testRandomPreyMethod() {
+        FoxField.getFoxes().clear();
         Fox fox = new Fox();
         FoxField.addFox(fox);
+        System.out.println(FoxField.getFoxes().size());
+        System.out.println(FoxField.randomNumberOfPrey());
         assertTrue(FoxField.randomNumberOfPrey() <= 20);
     }
 }
