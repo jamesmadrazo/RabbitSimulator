@@ -4,6 +4,10 @@
 
 Jack, Conor, Thanu, Emese, Tyler, James
 
+## Trello Board
+
+https://trello.com/b/2GxosGo3/rabbit-simulator
+
 ## Overview
 
 This program simulates rabbits breeding, dying as well as the introduction of foxes (who also breed and die). The user inputs how long they would like the program to run in months (where one month is one second in real time) and finally outputs the following:
