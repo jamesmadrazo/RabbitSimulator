@@ -1,5 +1,8 @@
 package com.sparta.engineering50;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 
 public class Field {
@@ -9,58 +12,38 @@ public class Field {
         return rabbits;
     }
 
-    public static void addRabbit(Rabbit rabbit) {
-        rabbits.add(rabbit);
-    }
-
-    public static void addRabbits(ArrayList<Rabbit> rabbitArray) {
-        for (Rabbit rabbit : rabbitArray) {
-            addRabbit(rabbit);
-        }
-    }
 
     public static void breed() {
-        int malePosition = -1;
-        int femalePosition = -1;
-        int count = 0;
+        Statement statement = null;
+        Statement st2 = null;
+        Statement st3 = null;
+        ResultSet male = null;
+        ResultSet female = null;
 
-        while(count < rabbits.size()) {
-            if (rabbits.get(count).isAvailable() && rabbits.get(count).getGender().equals("male") && malePosition == -1) {
-                malePosition = count;
-                count = 0;
+        try {
+            statement = Database.connection.createStatement();
+            st2 = Database.connection.createStatement();
+            st3 = Database.connection.createStatement();
+
+            male = statement.executeQuery("SELECT ID FROM rabbit WHERE Gender = 'male' AND Available = 'yes'");
+            female = st2.executeQuery("SELECT ID FROM rabbit WHERE Gender = 'female' AND Available = 'yes'");
+
+            while(male.next() && female.next()) {
+                st3.executeUpdate("UPDATE rabbit SET Available = 'no' WHERE ID = " + male.getInt("ID"));
+                st3.closeOnCompletion();
+                st3.executeUpdate("UPDATE rabbit SET Pregnant = 'yes', Available = 'no' WHERE ID = " + female.getInt("ID"));
+                st3.closeOnCompletion();
             }
 
-            if (rabbits.get(count).isAvailable() && rabbits.get(count).getGender().equals("female") && femalePosition == -1) {
-                femalePosition = count;
-                count = 0;
-            }
-
-            if (malePosition != -1 && femalePosition != -1) {
-                rabbits.get(femalePosition).getPregnant();
-                rabbits.get(malePosition).setAvailable(false);
-                malePosition = -1;
-                femalePosition = -1;
-                count = 0;
-            }
-            count++;
+        } catch (SQLException ex) {
+            System.out.println("SQLException: " + ex.getMessage());
+            System.out.println("SQLState: " + ex.getSQLState());
+            System.out.println("VendorError: " + ex.getErrorCode());
+        } finally {
+            try { if (st3 != null) st3.close(); } catch (Exception e) {};
+            try { if (statement != null) statement.close(); } catch (Exception e) {};
+            try { if (male != null) male.close(); } catch (Exception e) {};
+            try { if (female != null) female.close(); } catch (Exception e) {};
         }
     }
-
-//    public static void breed() {
-//        int rabbitCounter = 0;
-//        while (rabbitCounter < rabbits.size())
-//            for (Rabbit rabbit : rabbits) {
-//                rabbitCounter++;
-//                if (rabbit.isAvailable() && rabbit.getGender().equals("male")) {
-//                    for (Rabbit rabbit1 : rabbits) {
-//                        if (rabbit1.isAvailable() && rabbit1.getGender().equals("female")) {
-//                            rabbit1.getPregnant();
-//                            rabbit.setAvailable(false);
-//                            rabbitCounter = 0;
-//                            break;
-//                        }
-//                    }
-//                }
-//            }
-//    }
 }

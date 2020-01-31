@@ -1,6 +1,8 @@
 package com.sparta.engineering50;
 
-import java.util.ArrayList;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.Random;
 
 public class Rabbit {
@@ -21,7 +23,6 @@ public class Rabbit {
         age = 0;
         gender = offSpringGender();
         state = "young";
-
     }
 
     //Only use it for testing!
@@ -46,63 +47,74 @@ public class Rabbit {
         return age;
     }
 
-    public void increaseAge() {
-        age++;
-        if (age == 3) {
-            setState("adult");
-            setAvailable(true);
-        } else if (age == 60) {
-            setState("dead");
-            RabbitCounter.deadCounterIncrease();
-            if(gender.equals("male")) {
-                RabbitCounter.decreaseAliveRabbitCounterMale();
-            } else {
-                RabbitCounter.decreaseAliveRabbitCounterFemale();
-            }
-            setAvailable(false);
+    public static void increaseAge() {
+        Statement statement = null;
+        ResultSet rs = null;
+
+        try {
+            statement = Database.connection.createStatement();
+            statement.executeUpdate("UPDATE rabbit SET Age = Age + 1");
+            statement.executeUpdate("UPDATE rabbit SET Available = 'yes' WHERE Age = 3");
+            statement.executeUpdate("UPDATE rabbit SET Available = 'no', Dead = 'yes' WHERE Age = 60");
+            statement.executeUpdate("UPDATE rabbit SET Available = 'yes' WHERE Age >= 3 AND Gender = 'male'");
+        } catch (SQLException ex) {
+            System.out.println("SQLException: " + ex.getMessage());
+            System.out.println("SQLState: " + ex.getSQLState());
+            System.out.println("VendorError: " + ex.getErrorCode());
+        } finally {
+            try { if (rs != null) rs.close(); } catch (Exception e) {};
+            try { if (statement != null) statement.close(); } catch (Exception e) {};
         }
     }
 
-    private String offSpringGender() {
+    public static String offSpringGender() {
         Random random = new Random();
         boolean result = random.nextBoolean();
         if (result) {
-            RabbitCounter.increaseMaleCounter();
             return "male";
         } else {
-            RabbitCounter.increaseFemaleCounter();
             return "female";
         }
     }
 
-    public void getPregnant() {
-        if (gender.equals("female")) {
-            state = "pregnant";
-        }
-        setAvailable(false);
-    }
+    public static void giveBirth() {
+        Statement statement = null;
+        Statement statement2 = null;
+        ResultSet rs = null;
+        String sql;
 
-    public ArrayList<Rabbit> giveBirth() {
-        ArrayList<Rabbit> arrayOfRabbits = new ArrayList<>();
-        if (state.equals("pregnant")) {
-            Random random = new Random();
-            int randomNumber = 0;
-            while (randomNumber == 0) {
-                randomNumber = random.nextInt(15);
+        try {
+            statement = Database.connection.createStatement();
+            statement2 = Database.connection.createStatement();
+            rs = statement.executeQuery("SELECT ID FROM rabbit WHERE Pregnant = 'yes'");
+
+            while (rs.next()) {
+
+                Random random = new Random();
+                int randomNumber = 0;
+                while (randomNumber == 0) {
+                    randomNumber = random.nextInt(15);
+                }
+
+                for (int i = randomNumber; i > 0; i--) {
+                    sql = "INSERT INTO rabbit (Age, Gender, Available, Pregnant, Dead) VALUES (0, /" + offSpringGender() + "/, 'no', 'no', 'no')";
+                    sql = sql.replace("/", "'");
+                    statement2.executeUpdate(sql);
+                }
+
+                sql = "UPDATE rabbit SET Available = 'yes', Pregnant = 'no' WHERE ID = " + rs.getInt("ID");
+//                statement.executeUpdate(sql);
             }
 
-            for (int i = randomNumber; i > 0; i--) {
-                arrayOfRabbits.add(new Rabbit());
-            }
-            state = "adult";
-            setAvailable(true);
-
-        } else if (getState().equals("adult")){
-            setAvailable(true);
+        } catch (SQLException ex) {
+            System.out.println("HERE!!!");
+            System.out.println("SQLException: " + ex.getMessage());
+            System.out.println("SQLState: " + ex.getSQLState());
+            System.out.println("VendorError: " + ex.getErrorCode());
+        } finally {
+            try { if (rs != null) rs.close(); } catch (Exception e) {};
+            try { if (statement != null) statement.close(); } catch (Exception e) {};
         }
-        return arrayOfRabbits;
     }
-
-
 }
 

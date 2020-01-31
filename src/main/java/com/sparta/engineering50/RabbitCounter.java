@@ -2,9 +2,9 @@ package com.sparta.engineering50;
 
 public class RabbitCounter {
 
-    private static int aliveRabbitCounterFemale;
-    private static int aliveRabbitCounterMale;
-    private static int deadCounter;
+    private static int aliveRabbitCounterFemale = 0;
+    private static int aliveRabbitCounterMale = 0;
+    private static int deadCounter = 0;
 
     public static void increaseMaleCounter() {
         aliveRabbitCounterMale++;

@@ -6,24 +6,21 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class TimeSimulatorTest {
+public class DatabaseTest {
+
     @Test
-    void checkTimerRuns() throws InterruptedException {
-        TimeSimulator timeSim = new TimeSimulator();
-        timeSim.initialiseTimeSimulator(6);
-        Thread.currentThread().join(6000);
-        assertEquals(6, timeSim.getCount());
+    void checkDatabaseConnection() {
+        Database.connectToDb();
+        assertTrue(Database.connectionEstablished);
     }
-    @Test
-    void checkFieldTickWorks() throws InterruptedException {
-        TimeSimulator timeSimulator = new TimeSimulator();
 
+    @Test
+    void testThatDataIsInserted() {
         Statement statement = null;
         ResultSet results = null;
-        int total = 0;
 
         Database.connectToDb();
         Database.clearDatabase();
@@ -34,7 +31,10 @@ public class TimeSimulatorTest {
             results = statement.executeQuery("SELECT COUNT(ID) FROM rabbit");
 
             results.next();
-            total = results.getInt(1);
+
+            int count = results.getInt(1);
+
+            assertEquals(2, count);
 
         } catch (SQLException ex) {
             System.out.println("SQLException: " + ex.getMessage());
@@ -44,9 +44,5 @@ public class TimeSimulatorTest {
             try { if (results != null) results.close(); } catch (Exception e) {};
             try { if (statement != null) statement.close(); } catch (Exception e) {};
         }
-
-        timeSimulator.initialiseTimeSimulator(30);
-        Thread.currentThread().join(30000);
-        assertTrue(total>10);
     }
 }
