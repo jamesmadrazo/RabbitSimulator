@@ -324,7 +324,7 @@ Review:
 
 ## Friday Morning - Scrum Master: Tyler
 
-## Spring 1 (9.30am - 10.30am)
+## Sprint 1 (9.30am - 10.30am)
 
 * Create an abstract class for Fox and Rabbit as Animal to cut repeated code (Thanu and Tyler)
 
@@ -340,6 +340,20 @@ Review:
 
 * Need to correct bug in program where foxes are breeding beginning in month 12 and not month 10
 
-## Spring 2 (10.30am - 11.30am)
+## Sprint 2 (10.30am - 11.30am)
 
 * Increasing code coverage by writing tests (All)
+
+Review:
+
+* Got up to 78% code coverage but due to time constraints couldn't get any further
+
+## Sprint 3 (11.30am - 12pm)
+
+* Fix final few errors (foxes not breeding/concurrent modification exception) - All
+
+* Write up readme file
+
+Review:
+
+* Final project on github, need to add readme file still
