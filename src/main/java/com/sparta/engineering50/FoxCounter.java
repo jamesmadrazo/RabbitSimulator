@@ -4,7 +4,7 @@ public class FoxCounter {
 
     private static int aliveFoxCounterFemale;
     private static int aliveFoxCounterMale;
-    //private static int deadCounter;
+    private static int deadCounter;
 
     public static void increaseMaleCounter() {
         aliveFoxCounterMale++;
@@ -30,16 +30,16 @@ public class FoxCounter {
         return aliveFoxCounterMale;
     }
 
-    //public static void deadCounterIncrease() {
-    //     deadCounter++;
-    // }
+    public static void deadCounterIncrease() {
+         deadCounter++;
+     }
 
-/*    public static int getDeadCounter() {
+    public static int getDeadCounter() {
         return deadCounter;
-    }*/
+    }
 
-    /// public static int getTotalRabbits() {
-    //  return deadCounter+aliveFoxCounterMale+ aliveFoxCounterFemale;
-    //}
+    public static int getTotalFoxes() {
+      return deadCounter+aliveFoxCounterMale+ aliveFoxCounterFemale;
+    }
 
 }
