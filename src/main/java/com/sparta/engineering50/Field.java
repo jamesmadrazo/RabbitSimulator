@@ -48,7 +48,6 @@ public class Field {
         int loopLength = 0;
         loopLength = Math.min(availableMaleRabbits.size(), availableFemaleRabbits.size());
         for (int i = 0; i < loopLength; i++) {
-            availableMaleRabbits.get(i).getPregnant();
             if (random.nextBoolean()) {
                 availableFemaleRabbits.get(i).getPregnant();
             }

@@ -6,6 +6,4 @@ public class App {
         UserInput.getUserInput();
         InitializeSimulator.beginSimulation(UserInput.getUserI());
     }
-
-
 }

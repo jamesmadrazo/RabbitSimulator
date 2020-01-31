@@ -8,8 +8,9 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class FieldTest {
     // These tests pass if you remove the random element for pregnancy but they pass otherwise
+
     @Test
-    void testThatRabbitsCanGetPregnant() {
+    void testThatRabbitsDonNotGetPregnantAllTHeTimeIfRandomised() {
         Rabbit maleRabbit = new Rabbit();
         maleRabbit.setGender("male");
         Rabbit femaleRabbit = new Rabbit();
@@ -20,12 +21,22 @@ public class FieldTest {
         }
         Field.addRabbit(maleRabbit);
         Field.addRabbit(femaleRabbit);
-        Field.breed();
-        assertTrue(femaleRabbit.isPregnant());
+        ArrayList<Boolean> isPregnantList = new ArrayList<Boolean>();
+        for (int i = 0; i <= 20; i++) {
+            maleRabbit.increaseAge();
+            femaleRabbit.increaseAge();
+            Field.breed();
+            isPregnantList.add(femaleRabbit.isPregnant());
+            femaleRabbit.giveBirth();
+
+        }
+        System.out.println(isPregnantList.toString());
+        assertTrue(isPregnantList.contains(false));
+        assertTrue(isPregnantList.contains(true));
     }
 
     @Test
-    public void testThatOneMaleTwoFemaleResultsInOneFemalePregnant() {
+    public void testThatOneMaleTwoFemaleResultsInOneFemaleBeingABleToGetPregnant() {
         Rabbit maleRabbit = new Rabbit();
         maleRabbit.setGender("male");
         Rabbit femaleRabbit = new Rabbit();
@@ -42,16 +53,29 @@ public class FieldTest {
         Field.addRabbit(femaleRabbit);
         Field.addRabbit(femaleRabbit1);
         System.out.println(Field.getRabbits().size());
-        Field.breed();
-
+        ArrayList<Boolean> isPregnantList = new ArrayList<Boolean>();
+        ArrayList<Boolean> isPregnantList1 = new ArrayList<Boolean>();
+        for (int i = 0; i <= 20; i++) {
+            maleRabbit.increaseAge();
+            femaleRabbit.increaseAge();
+            femaleRabbit1.increaseAge();
+            Field.breed();
+            isPregnantList.add(femaleRabbit.isPregnant());
+            isPregnantList1.add(femaleRabbit1.isPregnant());
+            femaleRabbit.giveBirth();
+            femaleRabbit1.giveBirth();
+        }
+        System.out.println(isPregnantList.toString());
+        System.out.println(isPregnantList1.toString());
+        assertTrue(isPregnantList.contains(false) && isPregnantList.contains(true));
+        assertFalse( isPregnantList1.contains(true));
         assertFalse(maleRabbit.isPregnant());
-        assertTrue(femaleRabbit.isPregnant());
-        assertFalse(femaleRabbit1.isPregnant());
+
 
     }
 
     @Test
-    public void testThatTwoMalesTwoFemaleResultsInTwoFemalePregnant() {
+    public void testThatTwoMalesTwoFemaleResultsInBothFemalesPregnantSometimes() {
         Rabbit maleRabbit = new Rabbit();
         maleRabbit.setGender("male");
         Rabbit maleRabbit1 = new Rabbit();
@@ -72,12 +96,23 @@ public class FieldTest {
         Field.addRabbit(femaleRabbit);
         Field.addRabbit(femaleRabbit1);
 
-        Field.breed();
-
+        ArrayList<Boolean> isPregnantList = new ArrayList<Boolean>();
+        ArrayList<Boolean> isPregnantList1 = new ArrayList<Boolean>();
+        for (int i = 0; i <= 20; i++) {
+            maleRabbit.increaseAge();
+            femaleRabbit.increaseAge();
+            femaleRabbit1.increaseAge();
+            Field.breed();
+            isPregnantList.add(femaleRabbit.isPregnant());
+            isPregnantList1.add(femaleRabbit1.isPregnant());
+            femaleRabbit.giveBirth();
+            femaleRabbit1.giveBirth();
+        }
+        System.out.println(isPregnantList.toString());
+        System.out.println(isPregnantList1.toString());
+        assertTrue(isPregnantList.contains(false) && isPregnantList.contains(true));
+        assertTrue( isPregnantList1.contains(false) && isPregnantList1.contains(true));
         assertFalse(maleRabbit.isPregnant());
-        assertFalse(maleRabbit1.isPregnant());
-        assertTrue(femaleRabbit.isPregnant());
-        assertTrue(femaleRabbit1.isPregnant());
 
     }
 
