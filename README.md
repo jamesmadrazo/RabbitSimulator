@@ -1,5 +1,34 @@
-# Rabbit Simulator Sprint Records
+# Rabbit Simulator
 
+## Participants
+
+Jack, Conor, Thanu, Emese, Tyler, James
+
+## Overview
+
+This program simulates rabbits breeding, dying as well as the introduction of foxes (who also breed and die). The user inputs how long they would like the program to run in months (where one month is one second in real time) and finally outputs the following:
+
+* Number of male rabbits alive
+
+* Number of female rabbits alive
+
+* Number of male foxes alive
+
+* Number of female foxes alive
+
+* Number of rabbits that have died (natural death and eaten)
+
+## Future Improvements
+
+If we had more time, some future features could include:
+
+* Implementation of JDBC in order to make the program more efficient at high number of rabbit objects
+
+* Variables for starting number of rabbits/foxes as well as breeding frequency, random chance percentage and changing number of offspring
+
+* Create a more user friendly application rather than doing all in the console
+
+# Rabbit Simulator Sprint Records
 
 ## Monday Afternoon- Scrum master: James
 
