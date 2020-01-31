@@ -7,12 +7,50 @@ import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class FoxTest {
-    Fox fox = new Fox();
+
+    Fox fox = new Fox("male");
 
     @Test
     public void ageShouldBeZero() {
         assertEquals(0, fox.getAge());
     }
+
+    @Test
+    public void testThatMaleFoxDies() {
+        Fox fox1 = new Fox("male");
+
+        for (int i = 0; i < 60; i++) {
+            fox1.increaseAge();
+        }
+        fox1.incrementAge();
+
+        assertEquals(2, FoxCounter.getDeadCounter());
+    }
+
+    @Test
+    public void testThatFemaleFoxDies() {
+        Fox fox1 = new Fox("female");
+
+        for (int i = 0; i < 60; i++) {
+            fox1.increaseAge();
+        }
+        fox1.incrementAge();
+
+        assertEquals(1, FoxCounter.getDeadCounter());
+    }
+
+    @Test
+    void testMaleFoxCounterIsIncreased() {
+        Fox fox = new Fox("male");
+        assertEquals(2, FoxCounter.getMaleFoxCounter());
+    }
+
+    @Test
+    void testFemaleFoxCounterIsIncreased() {
+        Fox fox = new Fox("female");
+        assertEquals(1, FoxCounter.getFemaleFoxCounter());
+    }
+
 
     @Test
     public void newFoxShouldNotBeInAvailableFoxesBecauseYoung() {
