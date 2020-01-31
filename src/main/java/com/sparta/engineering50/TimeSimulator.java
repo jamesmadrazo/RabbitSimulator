@@ -55,7 +55,7 @@ public class TimeSimulator {
 
                 }
                 System.out.println("Month: " + count + " Rabbits: " + (RabbitCounter.getMaleRabbitCounter() + RabbitCounter.getFemaleRabbitCounter()) + " Foxes: " + (FoxCounter.getFemaleFoxCounter() + FoxCounter.getMaleFoxCounter())); // Can be removed later
-                if (count % 12 == 0) {
+                if ((count-10) % 12 == 0) {
                     FoxField.breed();
                 }
                 int NumberOfRabbits = RabbitCounter.getMaleRabbitCounter() + RabbitCounter.getFemaleRabbitCounter();

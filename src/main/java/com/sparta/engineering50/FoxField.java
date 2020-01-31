@@ -39,7 +39,6 @@ public class FoxField {
     }
 
     public static void breed() {
-        Random random = new Random();
         int loopLength = 0;
         loopLength = Math.min(availableMaleFoxes.size(), availableFemaleFoxes.size());
         for (int i = 0; i < loopLength; i++) {

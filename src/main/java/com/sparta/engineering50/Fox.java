@@ -47,7 +47,7 @@ public class Fox {
 
     public void die(){
         FoxCounter.deadCounterIncrease();
-        if(gender.equals("male")) {
+        if(getGender().equals("male")) {
             FoxCounter.decreaseAliveFoxCounterMale();
             FoxField.getAvailableMaleFoxes().remove(this);
         } else {
