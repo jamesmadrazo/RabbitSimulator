@@ -10,7 +10,7 @@ public class Field {
     private static ArrayList<Rabbit> availableMaleRabbits = new ArrayList<>();
     private static ArrayList<Rabbit> availableFemaleRabbits = new ArrayList<>();
 
- static Random rd = new Random(); // creating Random object
+    static Random rd = new Random(); // creating Random object
 
 
     public static ArrayList<Rabbit> getRabbits() {
