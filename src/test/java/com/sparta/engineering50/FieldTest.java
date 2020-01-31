@@ -10,6 +10,35 @@ public class FieldTest {
     // These tests pass if you remove the random element for pregnancy but they pass otherwise
 
     @Test
+    public void testGetRabbitsMethod () {
+        Rabbit rabbit = new Rabbit();
+        Field.addRabbit(rabbit);
+        System.out.println(Field.getRabbits().size());
+        assertTrue(Field.getRabbits().contains(rabbit));
+    }
+
+    @Test
+    public void testGetAvailableFemaleRabbitsMethod () {
+        Rabbit rabbit = new Rabbit();
+        rabbit.setGender("female");
+        for (int i = 0; i <= 3; i++) {
+            rabbit.increaseAge();
+        }
+        assertTrue(Field.getAvailableFemaleRabbits().contains(rabbit));
+    }
+
+    @Test
+    public void testGetAvailableMaleRabbitsMethod () {
+        Rabbit rabbit = new Rabbit();
+        rabbit.setGender("male");
+        for (int i = 0; i <= 3; i++) {
+            rabbit.increaseAge();
+        }
+        assertTrue(Field.getAvailableMaleRabbits().contains(rabbit));
+    }
+
+
+    @Test
     void testThatRabbitsDonNotGetPregnantAllTHeTimeIfRandomised() {
         Rabbit maleRabbit = new Rabbit();
         maleRabbit.setGender("male");
@@ -117,7 +146,7 @@ public class FieldTest {
     }
 
     @Test
-    public void testThatNewRabbitsAreAddedToRabbitArray () {
+    public void testThatNewRabbitsAreAddedToRabbitArrayByAddRabbitsMethod () {
         Rabbit rabbit = new Rabbit();
         rabbit.setGender("female");
         rabbit.getPregnant();
@@ -125,4 +154,8 @@ public class FieldTest {
         Field.addRabbits(newRabbits);
         assertTrue(Field.getRabbits().size()>0);
     }
+
+
+
+
 }
