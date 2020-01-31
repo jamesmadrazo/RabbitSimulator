@@ -66,6 +66,8 @@ public class FieldTest {
 
     @Test
     public void testThatOneMaleTwoFemaleResultsInOneFemaleBeingABleToGetPregnant() {
+        RabbitCounter.resetCounters();
+        Field.getRabbits().clear();
         Rabbit maleRabbit = new Rabbit();
         maleRabbit.setGender("male");
         Rabbit femaleRabbit = new Rabbit();

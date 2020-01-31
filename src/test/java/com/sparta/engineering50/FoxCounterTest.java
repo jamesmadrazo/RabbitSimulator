@@ -7,6 +7,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class FoxCounterTest {
     @Test
     void foxCountersShouldMatchNumberOfFox() throws InterruptedException {
+        FoxCounter.resetCounters();
+        FoxField.getFoxes().clear();
         TimeSimulator timeSimulator = new TimeSimulator();
         Fox maleFox = new Fox();
         maleFox.setGender("male");

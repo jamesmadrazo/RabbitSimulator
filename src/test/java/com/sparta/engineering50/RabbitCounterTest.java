@@ -9,6 +9,8 @@ public class RabbitCounterTest {
     @Test
     void rabbitCountersShouldMatchNumberOfRabbits() throws InterruptedException {
         TimeSimulator timeSimulator = new TimeSimulator();
+        RabbitCounter.resetCounters();
+        Field.getRabbits().clear();
         Rabbit maleRabbit = new Rabbit();
         maleRabbit.setGender("male");
         Rabbit femaleRabbit = new Rabbit();

@@ -6,6 +6,12 @@ public class FoxCounter {
     private static int aliveFoxCounterMale;
     private static int deadCounter;
 
+    public static void resetCounters() {
+        aliveFoxCounterFemale = 0;
+        aliveFoxCounterMale = 0;
+        deadCounter = 0;
+    }
+
     public static void increaseMaleCounter() {
         aliveFoxCounterMale++;
     }

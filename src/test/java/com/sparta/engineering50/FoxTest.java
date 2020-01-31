@@ -41,12 +41,14 @@ public class FoxTest {
 
     @Test
     void testMaleFoxCounterIsIncreased() {
+        FoxCounter.resetCounters();
         Fox fox = new Fox("male");
-        assertEquals(2, FoxCounter.getMaleFoxCounter());
+        assertEquals(1, FoxCounter.getMaleFoxCounter());
     }
 
     @Test
     void testFemaleFoxCounterIsIncreased() {
+        FoxCounter.resetCounters();
         Fox fox = new Fox("female");
         assertEquals(1, FoxCounter.getFemaleFoxCounter());
     }

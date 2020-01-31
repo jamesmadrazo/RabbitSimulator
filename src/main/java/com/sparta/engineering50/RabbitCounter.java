@@ -6,6 +6,12 @@ public class RabbitCounter {
     private static int aliveRabbitCounterMale;
     private static int deadCounter;
 
+    public static void resetCounters() {
+        aliveRabbitCounterFemale = 0;
+        aliveRabbitCounterMale = 0;
+        deadCounter = 0;
+    }
+
     public static void increaseMaleCounter() {
         aliveRabbitCounterMale++;
     }
