@@ -3,28 +3,19 @@ package com.sparta.engineering50;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class Fox {
-
-    private int age;
-    private String gender;
-    private boolean isPregnant;
-
-    public boolean isPregnant() {
-        return isPregnant;
-    }
-
-    public void setPregnant(boolean pregnant) {
-        isPregnant = pregnant;
-    }
+public class Fox extends Animal {
 
     public Fox() {
-        age = 0;
-        gender = offSpringGender();
+        super();
+        if (getGender().equals("male")) {
+            FoxCounter.increaseMaleCounter();
+        } else {
+            FoxCounter.increaseFemaleCounter();
+        }
     }
 
     public Fox(String gender) {
-        age = 0;
-        this.gender = gender;
+        super();
         if (gender.equals("male")) {
             FoxCounter.increaseMaleCounter();
         } else {
@@ -32,22 +23,10 @@ public class Fox {
         }
     }
 
-    //Only use it for testing!
-    public void setGender(String foxGender) {
-        this.gender = foxGender;
-    }
-
-    public String getGender() {
-        return gender;
-    }
-
-    public int getAge() {
-        return age;
-    }
 
     public void die(){
         //FoxCounter.deadCounterIncrease(); uncomment once dead counter is implemented for foxes
-        if(gender.equals("male")) {
+        if(getGender().equals("male")) {
             FoxCounter.decreaseAliveFoxCounterMale();
             FoxField.getAvailableMaleFoxes().remove(this);
         } else {
@@ -59,40 +38,23 @@ public class Fox {
 
 
     public void increaseAge() {
-        age++;
-        if (age == 10) {
-            if (gender.equals("male")) {
+        incrementAge();
+        if (getAge() == 10) {
+            if (getGender().equals("male")) {
                 FoxField.addMale(this);
             } else {
                 FoxField.addFemale(this);
             }
-        } else if (age == 60) {
+        } else if (getAge() == 60) {
             die();
         }
 
     }
 
-    private String offSpringGender() {
-        Random random = new Random();
-        boolean result = random.nextBoolean();
-        if (result) {
-            FoxCounter.increaseMaleCounter();
-            return "male";
-        } else {
-            FoxCounter.increaseFemaleCounter();
-            return "female";
-        }
-    }
-
-    public void getPregnant() {
-        if (gender.equals("female")) {
-            isPregnant = true;
-        }
-    }
 
     public ArrayList<Fox> giveBirth() {
         ArrayList<Fox> arrayOfFoxes = new ArrayList<>();
-        if (isPregnant) {
+        if (isPregnant()) {
             Random random = new Random();
             int randomNumber = 0;
             while (randomNumber == 0) {
@@ -101,7 +63,7 @@ public class Fox {
             for (int i = randomNumber; i > 0; i--) {
                 arrayOfFoxes.add(new Fox());
             }
-            isPregnant = false;
+            setPregnant(false);
         }
         return arrayOfFoxes;
     }

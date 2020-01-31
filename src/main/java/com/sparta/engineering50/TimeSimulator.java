@@ -59,7 +59,10 @@ public class TimeSimulator {
                     FoxField.breed();
                 }
                 int NumberOfRabbits = RabbitCounter.getMaleRabbitCounter() + RabbitCounter.getFemaleRabbitCounter();
-                FoxField.hunt();
+                if (count >= 12) {
+                    FoxField.hunt();
+                }
+                System.out.println(Field.getRabbits().size());
 
 
 

@@ -3,27 +3,20 @@ package com.sparta.engineering50;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class Rabbit {
-    private int age;
-    private String gender;
-    private boolean isPregnant;
-
-    public boolean isPregnant() {
-        return isPregnant;
-    }
-
-    public void setPregnant(boolean pregnant) {
-        isPregnant = pregnant;
-    }
+public class Rabbit extends Animal {
 
     public Rabbit() {
-        age = 0;
-        gender = offSpringGender();
+        super();
+        if (getGender().equals("male")) {
+            RabbitCounter.increaseMaleCounter();
+        } else {
+            RabbitCounter.increaseFemaleCounter();
+        }
     }
 
     public Rabbit(String gender) {
-        age = 0;
-        this.gender = gender;
+        super();
+        this.setGender(gender);
         if (gender.equals("male")) {
             RabbitCounter.increaseMaleCounter();
         } else {
@@ -31,22 +24,9 @@ public class Rabbit {
         }
     }
 
-    //Only use it for testing!
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
-
-    public String getGender() {
-        return gender;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
     public void die(){
         RabbitCounter.deadCounterIncrease();
-        if(gender.equals("male")) {
+        if(super.getGender().equals("male")) {
             RabbitCounter.decreaseAliveRabbitCounterMale();
             Field.getAvailableMaleRabbits().remove(this);
         } else {
@@ -58,40 +38,22 @@ public class Rabbit {
 
 
     public void increaseAge() {
-        age++;
-        if (age == 3) {
-            if (gender.equals("male")) {
+        super.incrementAge();
+        if (super.getAge() == 3) {
+            if (super.getGender().equals("male")) {
                 Field.addMale(this);
             } else {
                 Field.addFemale(this);
             }
-        } else if (age == 60) {
+        } else if (super.getAge() == 60) {
             die();
         }
 
     }
 
-    private String offSpringGender() {
-        Random random = new Random();
-        boolean result = random.nextBoolean();
-        if (result) {
-            RabbitCounter.increaseMaleCounter();
-            return "male";
-        } else {
-            RabbitCounter.increaseFemaleCounter();
-            return "female";
-        }
-    }
-
-    public void getPregnant() {
-        if (gender.equals("female")) {
-            isPregnant = true;
-        }
-    }
-
     public ArrayList<Rabbit> giveBirth() {
         ArrayList<Rabbit> arrayOfRabbits = new ArrayList<>();
-        if (isPregnant) {
+        if (super.isPregnant()) {
             Random random = new Random();
             int randomNumber = 0;
             while (randomNumber == 0) {
@@ -100,7 +62,7 @@ public class Rabbit {
             for (int i = randomNumber; i > 0; i--) {
                 arrayOfRabbits.add(new Rabbit());
             }
-            isPregnant = false;
+            super.setPregnant(false);
         }
         return arrayOfRabbits;
     }
