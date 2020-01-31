@@ -62,10 +62,6 @@ public class TimeSimulator {
                 if (count >= 12) {
                     FoxField.hunt();
                 }
-                System.out.println(Field.getRabbits().size());
-
-
-
                 if (count >= seconds) {
                     timer.cancel();
                     timer.purge();

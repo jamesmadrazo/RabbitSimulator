@@ -25,8 +25,8 @@ public class Fox extends Animal {
 
 
     public void die(){
-        //FoxCounter.deadCounterIncrease(); uncomment once dead counter is implemented for foxes
-        if(getGender().equals("male")) {
+        FoxCounter.deadCounterIncrease();
+        if(gender.equals("male")) {
             FoxCounter.decreaseAliveFoxCounterMale();
             FoxField.getAvailableMaleFoxes().remove(this);
         } else {

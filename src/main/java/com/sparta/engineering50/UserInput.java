@@ -3,17 +3,15 @@ package com.sparta.engineering50;
 import java.util.Scanner;
 
 public class UserInput {
+
     private static int userInput;
 
-
-    public static int getUserInput() {
-
+    public static void provideUserInput() {
         Scanner scanner = new Scanner(System.in);
         userInput = scanner.nextInt();
-        return userInput;
     }
-    public static int getUserI(){
 
+    public static int getUserInput(){
         return userInput;
     }
 }
