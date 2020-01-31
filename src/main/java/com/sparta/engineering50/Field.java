@@ -5,13 +5,11 @@ import java.util.Random;
 
 public class Field {
 
-
     private static ArrayList<Rabbit> rabbits = new ArrayList<>();
     private static ArrayList<Rabbit> availableMaleRabbits = new ArrayList<>();
     private static ArrayList<Rabbit> availableFemaleRabbits = new ArrayList<>();
 
-    static Random rd = new Random(); // creating Random object
-
+    static Random random = new Random(); // creating Random object
 
     public static ArrayList<Rabbit> getRabbits() {
         return rabbits;
