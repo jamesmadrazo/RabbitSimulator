@@ -117,4 +117,11 @@ public class RabbitTest {
         arrayOfRabbits = rabbit.giveBirth();
         assertTrue(arrayOfRabbits.size() > 0);
     }
+
+    @Test
+    public void checkingARabbitCanDie(){
+        Rabbit rabbit = new Rabbit();
+        rabbit.die();
+
+    }
 }
