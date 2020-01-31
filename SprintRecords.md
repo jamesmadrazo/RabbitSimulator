@@ -211,6 +211,44 @@ Review:
 
 * We also tested the program to see where the limit is, and we got to about 32 months before the program runs out of memory space
 
+## Wednesday Afternoon - Scrum Master: Thanu
+
+##  Sprint (14:00 - 15:15) 
+
+Goals: 
+
+* Further refactor the breeding method.
+
+* Fix the phase-2 task - 50/50 rabbit breeding chance.
+
+Sprint: 
+
+* Refactor the breeding method, should be completed. (Jack, Emese, Conor, and Tyler).
+
+* Phase-2 second task (50% chance of breeding) should be successfully fixed and completed. (Thanu and James).
+
+Review: 
+
+* Whole team was happy with how the sprint went. Also was able to get the '50% chance of breeding' completed. The refactoring the breeding method was completed.
+
+## Sprint (15:30 - 16:45)
+
+Goals: 
+
+* Refactor other methods and classes.
+
+* Implement user input within the program.
+
+Sprint: 
+
+* Refactor other methods and classes in order to make the program more efficent. (Jack, Emese, Conor, and Tyler).
+
+* User input should be completed. This is where the user should be able to provide an input to specify how many months the program should run for. (Thanu and James).
+
+Review: 
+
+* Team happy with final result of sprint. Managed to complete the user input. Also the refactoring was completed too, which resulted in making the program more effiecent. (So from taking 24 minutes for 24 months, to about 1 minute for 24 months). 
+
 ## Thursday Morning - Scrum Master: Tyler
 ## Sprint 1 - (11am - 12.30pm)
 
@@ -283,21 +321,3 @@ Review:
 * Database seems to be going okay but won't know until we attempt implementation
 
 * There was a bug in the fox hunting but only happened once and hard to find - so will look into it
-
-## Friday Morning - Scrum Master: Tyler
-
-## Spring 1 (9.30am - 10.30am)
-
-* Create an abstract class for Fox and Rabbit as Animal to cut repeated code (Thanu and Tyler)
-
-* Investigate how to measure code coverage and begin that (Conor)
-
-* Last attempt at making the database more efficient to use in the program (Jack)
-
-* Fix and expand the breeding tests (Emese)
-
-Review:
-
-* All done, although not sure whether database will be completed by the deadline
-
-* Need to correct bug in program where foxes are breeding beginning in month 12 and not month 10
