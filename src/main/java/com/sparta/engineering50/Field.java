@@ -5,11 +5,13 @@ import java.util.Random;
 
 public class Field {
 
+
     private static ArrayList<Rabbit> rabbits = new ArrayList<>();
     private static ArrayList<Rabbit> availableMaleRabbits = new ArrayList<>();
     private static ArrayList<Rabbit> availableFemaleRabbits = new ArrayList<>();
 
-    static Random random = new Random(); // creating Random object
+    static Random rd = new Random(); // creating Random object
+
 
     public static ArrayList<Rabbit> getRabbits() {
         return rabbits;
@@ -46,7 +48,6 @@ public class Field {
         int loopLength = 0;
         loopLength = Math.min(availableMaleRabbits.size(), availableFemaleRabbits.size());
         for (int i = 0; i < loopLength; i++) {
-            availableMaleRabbits.get(i).getPregnant();
             if (random.nextBoolean()) {
                 availableFemaleRabbits.get(i).getPregnant();
             }
