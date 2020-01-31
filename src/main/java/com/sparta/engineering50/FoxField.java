@@ -7,6 +7,16 @@ public class FoxField {
     private static ArrayList<Fox> foxes = new ArrayList<>();
     private static ArrayList<Fox> availableMaleFoxes = new ArrayList<>();
     private static ArrayList<Fox> availableFemaleFoxes = new ArrayList<>();
+    public static ArrayList<Fox> foxesToRemove = new ArrayList<>();
+
+    public static void removeFoxes() {
+        for (Fox fox: foxesToRemove) {
+            foxes.remove(fox);
+            availableMaleFoxes.remove(fox);
+            availableFemaleFoxes.remove(fox);
+        }
+        foxesToRemove.clear();
+    }
 
     public static ArrayList<Fox> getFoxes() {
         return foxes;

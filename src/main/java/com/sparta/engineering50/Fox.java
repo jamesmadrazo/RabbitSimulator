@@ -28,12 +28,10 @@ public class Fox extends Animal {
         FoxCounter.deadCounterIncrease();
         if(getGender().equals("male")) {
             FoxCounter.decreaseAliveFoxCounterMale();
-            FoxField.getAvailableMaleFoxes().remove(this);
         } else {
             FoxCounter.decreaseAliveFoxCounterFemale();
-            FoxField.getAvailableFemaleFoxes().remove(this);
         }
-        FoxField.getFoxes().remove(this);
+        FoxField.foxesToRemove.add(this);
     }
 
 

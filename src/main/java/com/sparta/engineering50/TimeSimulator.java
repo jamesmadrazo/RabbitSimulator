@@ -43,16 +43,18 @@ public class TimeSimulator {
                     }
                     Field.addRabbits(rabbitsToAdd); // double adding??
                     rabbitsToAdd.clear();
+
+                    //System.out.println(Field.getRabbits().size());
+                    Field.breed();
+                }
+                synchronized (FoxField.getFoxes()) {
                     for (Fox fox : FoxField.getFoxes()) {
                         fox.increaseAge();
                         addFoxes(fox.giveBirth());
                     }
                     FoxField.addFoxes(foxesToAdd);
+                    FoxField.removeFoxes();
                     foxesToAdd.clear();
-                    //System.out.println(Field.getRabbits().size());
-                    Field.breed();
-
-
                 }
                 System.out.println("Month: " + count + " Rabbits: " + (RabbitCounter.getMaleRabbitCounter() + RabbitCounter.getFemaleRabbitCounter()) + " Foxes: " + (FoxCounter.getFemaleFoxCounter() + FoxCounter.getMaleFoxCounter())); // Can be removed later
                 if ((count-10) % 12 == 0) {
