@@ -119,6 +119,28 @@ Review:
 
 * Team happy with how spring went and was able to get a lot done within the hour. 
 
+## 5th Sprint (15:05 - 15:50)
+
+Goals: 
+
+* Refacotor and fix breeding error (Emese and Tyler)
+
+* Fix TimeSimulator and test (Conor and Jack)
+
+* Implenment user output within the program (Thanu and James) 
+
+Sprint: 
+
+* breed() method successfully fixed and tests completed.
+
+* TimeSimulator class implemented and tested.
+
+* User Output tested and implemented.
+
+Review: 
+
+* Team happy with final result of sprint. Managed to get all bugs ironed out and got a working version up.
+
 ## Wednesday Morning - Scrum Master: Conor
 
 ## Sprint 09:20-09:40
