@@ -40,7 +40,53 @@ If we had more time, some future features could include:
 
 ## Monday Afternoon- Scrum master: James
 
+### Sprint 1 (40 mins) 14:28-15:08
 
+Goals:
+* Create user stories
+* Create backlog
+* Set up trello
+
+Sprint:
+* Created a trello board for user stories (Emese)
+*	Created a trello board for backlog (Emese)
+*	Brainstormed ideas user stories (Everyone)
+*	Brainstormed tasks for backlog using user stories (Everyone)
+
+Review:	
+* The team worked well and collaboratively to successfully brainstorm ideas for the user stories and backlog
+* Should have explained ‘why’ on some points of the user stories
+ 
+### Sprint 2 (40 mins) 15:18 – 15:58
+
+Goals:
+* Setting up Github and inviting all team members to one person’s Github so that team members can push and pull branches from the master branch (Jack and Connor)
+* Creation of the rabbit class (James and Thanu)
+* Testing the rabbit class (Tyler and Emese)
+
+Sprint:
+* Rabbit class was created successfully
+* Testing was also done although there were errors that needed to be fixed
+*	Had several issues setting up Github
+
+Review:
+* Prioritise setting up the Github 
+* Fix the bugs on the rabbit class
+*	Ensure that testing has been done so that we don’t have to go back to it during next sprint 
+
+### Sprint 3 (50 mins) 16:10 – 17:00
+
+Goals:
+* Finish setting up Github (Jack and Connor)
+*	Fix bugs on rabbit class (Tyler and Emese)
+*	Create a male rabbit counter class (James and Thanu)
+*	Create a female rabbit counter class (James and Thanu)
+*	Create three states of rabbit  - ‘young’, ‘adult’ and ‘dead’ (Emese and Tyler)
+*	Create a class where the user can input the desired time they want to program to run for (James and Thanu)
+
+Review:
+* Very productive sprint, as all goals were met
+* When certain team members finished their tasks within the sprint, they would help the other team members complete their task (Jack and Connor)
 
 
 ## Tuesday Morning - Scrum Master: Emese
